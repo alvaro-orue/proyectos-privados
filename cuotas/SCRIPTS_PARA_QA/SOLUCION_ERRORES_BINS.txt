@@ -1,0 +1,129 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║           🚨 SOLUCIÓN RÁPIDA - ERRORES RELACIONADOS CON BINS 🚨          ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Si obtuviste un error 400, 403 o 500 al buscar cuotas (Installments Search),
+es MUY PROBABLE que el BIN no esté configurado en ese ambiente.
+
+═══════════════════════════════════════════════════════════════════════════
+
+📌 DIAGNÓSTICO RÁPIDO
+
+1. ¿Obtuviste uno de estos errores?
+
+   • Error 400 con mensaje "TN"
+   • Error 403 con mensaje "IB0"
+   • Error 500 con mensaje "The API Public service threw an error"
+
+   → Probablemente el BIN no está disponible en ese ambiente
+
+2. ¿El Token Generation funcionó correctamente (200 OK)?
+
+   → Tus credenciales están bien, el problema es el BIN
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ SOLUCIÓN
+
+PASO 1: Abre el archivo BINS_POR_AMBIENTE.md
+
+PASO 2: Busca la tabla del ambiente donde hiciste la prueba:
+   • DEV (Desarrollo)
+   • SANDBOX
+   • QA (Quality Assurance)
+   • PRODUCCIÓN
+
+PASO 3: Verifica si el BIN que usaste está en la lista de "BINs Validados"
+
+PASO 4: Si NO está en la lista:
+   • Usa uno de los BINs recomendados de la tabla
+   • O solicita a Izipay que configure ese BIN para tu merchant
+
+═══════════════════════════════════════════════════════════════════════════
+
+🔍 EJEMPLOS DE PROBLEMAS COMUNES
+
+PROBLEMA 1:
+├─ Error: "BIN 377893 falla con error 500 en SANDBOX"
+├─ Causa: Este BIN existe en DEV/QA pero NO en SANDBOX
+└─ Solución: Usa BIN 377750 (AMEX INTERBANK) en SANDBOX
+
+PROBLEMA 2:
+├─ Error: "BIN 362333 falla con error 500 en SANDBOX"
+├─ Causa: Este BIN (Diners) existe en DEV/QA pero NO en SANDBOX
+└─ Solución: Usa BIN 362426 (DINERS CLUB) en SANDBOX
+
+PROBLEMA 3:
+├─ Error: "BIN 545545 retorna 36 cuotas pero esperaba 12"
+├─ Causa: Este BIN funciona diferente en cada ambiente
+├─ DEV/QA: 12 cuotas, 3 meses diferido
+└─ SANDBOX: 36 cuotas, 0 meses diferido
+
+═══════════════════════════════════════════════════════════════════════════
+
+💡 BINS SEGUROS PARA CADA AMBIENTE
+
+PARA DEV/QA:
+┌────────────────────────────────────────────────────────────────────────┐
+│ BIN      Banco                Cuotas    Estado                         │
+├────────────────────────────────────────────────────────────────────────┤
+│ 545545   SCOTIABANK            12       ✅ Siempre funciona            │
+│ 400917   SCOTIABANK VISA       36       ✅ Siempre funciona            │
+│ 377893   BCP                   36       ✅ Solo DEV/QA                 │
+│ 553650   BBVA MC Platinum      36       ✅ Siempre funciona            │
+└────────────────────────────────────────────────────────────────────────┘
+
+PARA SANDBOX:
+┌────────────────────────────────────────────────────────────────────────┐
+│ BIN      Banco                Cuotas    Estado                         │
+├────────────────────────────────────────────────────────────────────────┤
+│ 545545   SCOTIABANK MC         36       ✅ Siempre funciona            │
+│ 400917   SCOTIABANK VISA       36       ✅ Siempre funciona            │
+│ 377750   AMEX INTERBANK        36       ✅ Solo SANDBOX                │
+│ 553650   BBVA MC Black         36       ✅ Siempre funciona            │
+└────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 SI ESTO NO RESUELVE TU PROBLEMA
+
+1. Verifica que el Merchant Code sea correcto:
+   • DEV/QA: 4078370
+   • SANDBOX: 4001834
+
+2. Verifica que el Public Key sea correcto
+
+3. Revisa el archivo de resultado JSON (test_result.json) para ver el
+   mensaje de error completo
+
+4. Si el problema persiste con los BINs recomendados:
+   • Contacta a Izipay: soporte@izipay.pe
+   • Solicita: "Lista de BINs configurados para merchant XXXX en ambiente YYY"
+
+═══════════════════════════════════════════════════════════════════════════
+
+📚 ARCHIVOS DE AYUDA
+
+Para información completa:
+├── BINS_POR_AMBIENTE.md              → Guía completa de BINs
+├── INSTRUCCIONES_SUITE_COMPLETA.md   → Guía del script maestro
+├── 00_LEEME_PRIMERO.txt              → Inicio rápido
+└── README.md                         → Documentación completa
+
+═══════════════════════════════════════════════════════════════════════════
+
+🔧 NOTA TÉCNICA
+
+El script maestro (test_suite_completo.py) ya tiene configurados los BINs
+correctos para cada ambiente. Si ejecutaste el script maestro y obtuviste
+errores de BINs, puede ser que:
+
+1. El ambiente no esté correctamente configurado (contacta a Izipay)
+2. Tu merchant no tenga BINs configurados en ese ambiente
+3. Necesitas solicitar acceso a más BINs para ese merchant
+
+═══════════════════════════════════════════════════════════════════════════
+
+Última actualización: 2025-11-06

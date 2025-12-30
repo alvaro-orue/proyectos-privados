@@ -1,0 +1,24 @@
+============================================================
+REPORTE DE PRUEBA CPI-002
+============================================================
+Test ID: CPI-002
+Test Name: Token Reutilizable
+Fecha: 2025-11-04 18:39:33
+Estado: ✅ PASÓ
+Duración Total: 3816.15ms
+
+------------------------------------------------------------
+PASOS EJECUTADOS
+------------------------------------------------------------
+
+Generate Token:
+  Estado: ✅ Éxito
+  Duración: 1805.24ms
+
+First Search (Should Succeed):
+  Estado: ✅ Éxito
+  Duración: 1013.85ms
+
+Second Search (Should Succeed - Reusable):
+  Estado: ✅ Éxito
+  Duración: 992.01ms

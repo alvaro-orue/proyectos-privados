@@ -1,0 +1,44 @@
+{
+  "timestamp": "2025-10-29T07:29:39.020759",
+  "checks": [
+    {
+      "test": "DNS Resolution",
+      "passed": true,
+      "details": {
+        "hostname": "qa-api-pw.izipay.pe",
+        "ip": "200.48.102.182"
+      }
+    },
+    {
+      "test": "Connectivity - Generate Token",
+      "passed": true,
+      "details": {
+        "url": "https://qa-api-pw.izipay.pe/security/v1/Token/Generate",
+        "status": 405
+      }
+    },
+    {
+      "test": "Connectivity - Search Installments",
+      "passed": true,
+      "details": {
+        "url": "https://qa-api-pw.izipay.pe/Installments/v1/Installments/Search",
+        "status": 405
+      }
+    },
+    {
+      "test": "Endpoint Test - Generate Token",
+      "passed": true,
+      "details": {
+        "url": "https://qa-api-pw.izipay.pe/security/v1/Token/Generate"
+      }
+    },
+    {
+      "test": "Endpoint Test - Search Installments",
+      "passed": true,
+      "details": {
+        "url": "https://qa-api-pw.izipay.pe/Installments/v1/Installments/Search"
+      }
+    }
+  ],
+  "overall_status": "HEALTHY"
+}

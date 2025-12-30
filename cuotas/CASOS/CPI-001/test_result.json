@@ -1,0 +1,90 @@
+{
+  "test_id": "CPI-001",
+  "test_name": "Flujo completo exitoso - Generar token y buscar cuotas",
+  "start_time": 1761742458.270037,
+  "end_time": 1761742458.8970857,
+  "total_duration_ms": 627.0487308502197,
+  "passed": true,
+  "error_message": null,
+  "steps": [
+    {
+      "step": "Generate Token",
+      "success": true,
+      "data": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJGVkNMMjAyNTEwMjkwNzU0MTgiLCJPcmRlck51bWJlciI6Ik9SREVSMjAyNTEwMjkwNzU0MTgiLCJBbW91bnQiOiIxMDAuMDAiLCJUb2tlbklkIjoiMGIyNzY1YjItMTJlZC00NzhjLWFlMjYtNzM1ZmZjNzE1ZDhjIiwibmJmIjoxNzYxNzQyNDU4LCJleHAiOjE3NjE3NDMzNTgsImlhdCI6MTc2MTc0MjQ1OH0.g4Tygr8joZBcL7fnXksN2Fr_mBw_CfjCwneorfwQuxY",
+        "response": {
+          "code": "00",
+          "message": "OK",
+          "response": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJGVkNMMjAyNTEwMjkwNzU0MTgiLCJPcmRlck51bWJlciI6Ik9SREVSMjAyNTEwMjkwNzU0MTgiLCJBbW91bnQiOiIxMDAuMDAiLCJUb2tlbklkIjoiMGIyNzY1YjItMTJlZC00NzhjLWFlMjYtNzM1ZmZjNzE1ZDhjIiwibmJmIjoxNzYxNzQyNDU4LCJleHAiOjE3NjE3NDMzNTgsImlhdCI6MTc2MTc0MjQ1OH0.g4Tygr8joZBcL7fnXksN2Fr_mBw_CfjCwneorfwQuxY",
+            "userOrg": "1snn5n9w",
+            "userScoring": "izipay_high"
+          }
+        },
+        "status_code": 200,
+        "duration_ms": 329.0069103240967,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "transactionId": "FVCL20251029075418",
+          "Date": "Wed, 29 Oct 2025 12:54:18 GMT",
+          "Transfer-Encoding": "chunked"
+        }
+      },
+      "duration_ms": 329.0069103240967,
+      "timestamp": "2025-10-29T07:54:18.599537"
+    },
+    {
+      "step": "Search Installments",
+      "success": true,
+      "data": {
+        "success": true,
+        "response": {
+          "code": "00",
+          "message": "Aprobado",
+          "header": {
+            "transactionStartDatetime": "2025-10-29 07:54:19.119",
+            "transactionEndDatetime": "2025-10-29 07:54:19.251",
+            "millis": 131
+          },
+          "response": {
+            "merchantCode": "4078370",
+            "bin": "545545",
+            "issuerName": "SCOTIABANK ",
+            "installments": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "deferred": "3",
+            "result": {
+              "messageFriendly": "Aprobado"
+            }
+          }
+        },
+        "status_code": 200,
+        "duration_ms": 297.15657234191895,
+        "installments_count": 12,
+        "issuer_name": "SCOTIABANK ",
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "X-Correlation-Id": "222c647b-ba3f-4596-9ef3-7348da375940",
+          "transactionId": "FVCL20251029075418",
+          "Date": "Wed, 29 Oct 2025 12:54:18 GMT",
+          "Transfer-Encoding": "chunked"
+        }
+      },
+      "duration_ms": 297.15657234191895,
+      "timestamp": "2025-10-29T07:54:18.897074"
+    }
+  ]
+}

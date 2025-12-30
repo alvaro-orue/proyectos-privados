@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNDE4MzkyOSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNDE4MzkyOSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJiOGM1NDYxOS04MzJlLTRlYjYtYWU2Mi05NWIxNzM5YmQxMmIiLCJuYmYiOjE3NjIyOTk1NzEsImV4cCI6MTc2MjMwMDQ3MSwiaWF0IjoxNzYyMjk5NTcxfQ.R1up-oC-laXkERfnI5CFGw1K1zqpelaH6cnYRNYousY",
+  "response": {
+    "code": "00",
+    "message": "OK",
+    "response": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNDE4MzkyOSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNDE4MzkyOSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJiOGM1NDYxOS04MzJlLTRlYjYtYWU2Mi05NWIxNzM5YmQxMmIiLCJuYmYiOjE3NjIyOTk1NzEsImV4cCI6MTc2MjMwMDQ3MSwiaWF0IjoxNzYyMjk5NTcxfQ.R1up-oC-laXkERfnI5CFGw1K1zqpelaH6cnYRNYousY",
+      "userOrg": "1snn5n9w",
+      "userScoring": "izipay_high"
+    }
+  },
+  "status_code": 200,
+  "duration_ms": 1805.2406311035156
+}

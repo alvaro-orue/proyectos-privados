@@ -1,0 +1,23 @@
+{
+  "test_id": "CPI-003",
+  "test_name": "TransactionId Consistente",
+  "status": "PASSED",
+  "transaction_id": "DEV20251104183955",
+  "order_number": "ORDER20251104183955",
+  "duration_ms": 2049.41,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Generate Token",
+      "duration_ms": 1010.13,
+      "status": "SUCCESS"
+    },
+    {
+      "step": 2,
+      "name": "Search Installments",
+      "duration_ms": 1039.28,
+      "status": "SUCCESS",
+      "cuotas": 12
+    }
+  ]
+}

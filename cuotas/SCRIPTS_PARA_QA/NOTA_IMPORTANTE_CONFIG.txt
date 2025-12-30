@@ -1,0 +1,94 @@
+╔═══════════════════════════════════════════════════════════════════════╗
+║                    ⚠️  NOTA IMPORTANTE - CONFIGURACIÓN ⚠️              ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+ANTES DE EJECUTAR CUALQUIER SCRIPT, DEBES MODIFICAR LA CONFIGURACIÓN
+
+═══════════════════════════════════════════════════════════════════════════
+
+📌 SCRIPTS CON CONFIGURACIÓN DETALLADA (ya documentados):
+   ✅ test_cpi_001.py
+   ✅ test_cpi_002.py
+
+📌 SCRIPTS CON CONFIGURACIÓN COMPACTA (requieren actualización manual):
+   ⚠️ test_cpi_003.py
+   ⚠️ test_cpi_004.py
+   ⚠️ test_cpi_005.py
+   ⚠️ test_cpi_006.py
+   ⚠️ test_cpi_007.py
+
+═══════════════════════════════════════════════════════════════════════════
+
+PARA LOS SCRIPTS CPI-003 A CPI-007:
+
+Busca esta línea cerca del inicio del archivo:
+
+CONFIG = {"token_url": "https://testapi-pw.izipay.pe/security/v1/Token/Generate",
+          "installments_url": "https://testapi-pw.izipay.pe/Installments/v1/Installments/Search",
+          "merchant_code": "4078370", "public_key": "VErethUtraQuxas57wuMuquprADrAHAb"}
+
+Y reemplaza con tus valores:
+
+CONFIG = {"token_url": "TU_URL_TOKEN_AQUI",
+          "installments_url": "TU_URL_INSTALLMENTS_AQUI",
+          "merchant_code": "TU_MERCHANT_CODE",
+          "public_key": "TU_PUBLIC_KEY"}
+
+═══════════════════════════════════════════════════════════════════════════
+
+EJEMPLO: Configurar para ambiente QA con comercio 4078370
+
+ANTES:
+CONFIG = {"token_url": "https://testapi-pw.izipay.pe/security/v1/Token/Generate",
+          "installments_url": "https://testapi-pw.izipay.pe/Installments/v1/Installments/Search",
+          "merchant_code": "4078370", "public_key": "VErethUtraQuxas57wuMuquprADrAHAb"}
+
+DESPUÉS:
+CONFIG = {"token_url": "https://qa-api-pw.izipay.pe/security/v1/Token/Generate",
+          "installments_url": "https://qa-api-pw.izipay.pe/Installments/v1/Installments/Search",
+          "merchant_code": "4078370", "public_key": "VErethUtraQuxas57wuMuquprADrAHAb"}
+
+═══════════════════════════════════════════════════════════════════════════
+
+URLS POR AMBIENTE:
+
+┌─────────────┬──────────────────────────────────────────────────────────┐
+│ AMBIENTE    │ URL BASE                                                 │
+├─────────────┼──────────────────────────────────────────────────────────┤
+│ DEV         │ https://testapi-pw.izipay.pe                             │
+│ SANDBOX     │ https://sandbox-api-pw.izipay.pe                         │
+│ QA          │ https://qa-api-pw.izipay.pe                              │
+│ PRODUCCIÓN  │ https://api-pw.izipay.pe                                 │
+└─────────────┴──────────────────────────────────────────────────────────┘
+
+ENDPOINTS:
+- Token: /security/v1/Token/Generate
+- Installments: /Installments/v1/Installments/Search
+
+═══════════════════════════════════════════════════════════════════════════
+
+CONFIGURACIÓN ACTUAL EN TODOS LOS SCRIPTS:
+
+Ambiente: DEV (testapi-pw.izipay.pe)
+Comercio: 4078370
+Public Key: VErethUtraQuxas57wuMuquprADrAHAb
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚠️ RECORDATORIOS IMPORTANTES:
+
+1. Verificar que el ambiente esté activo antes de ejecutar
+2. Usar credenciales correctas para cada ambiente
+3. NO mezclar credenciales de diferentes ambientes
+4. Respaldar los resultados generados para documentación
+
+═══════════════════════════════════════════════════════════════════════════
+
+📁 ARCHIVOS DE AYUDA EN ESTA CARPETA:
+
+- README.md                      → Documentación principal completa
+- INSTRUCCIONES_CONFIGURACION.txt → Guía paso a paso detallada
+- RESUMEN_SCRIPTS.md             → Descripción de cada script
+- NOTA_IMPORTANTE_CONFIG.txt      → Este archivo
+
+═══════════════════════════════════════════════════════════════════════════

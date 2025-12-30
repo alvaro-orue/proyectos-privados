@@ -1,0 +1,1429 @@
+{
+  "ambiente": "DEV (Desarrollo)",
+  "ambiente_codigo": "DEV",
+  "merchant_code": "4078370",
+  "fecha_ejecucion": "2025-11-06T18:54:20.620495",
+  "duracion_total_segundos": 39.242592573165894,
+  "total_tests": 7,
+  "tests_pasados": 7,
+  "tests_fallados": 0,
+  "resultados": [
+    {
+      "test_id": "CPI-001",
+      "test_name": "Flujo completo exitoso",
+      "start_time": 1762473221.3661962,
+      "end_time": 1762473227.3924792,
+      "total_duration_ms": 6026.283025741577,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "Generate Token",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTM0MSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTM0MSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiIzYWE1YWFhZC01NGMwLTQyNjQtODc5My0yMzJkNTdiZTQzZmEiLCJuYmYiOjE3NjI0NzMyMjIsImV4cCI6MTc2MjQ3NDEyMiwiaWF0IjoxNzYyNDczMjIyfQ.uaa7s1Tn7sGVCcUTJQvJ-FF3a2qJfCnksx6nR31Oskc",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTM0MSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTM0MSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiIzYWE1YWFhZC01NGMwLTQyNjQtODc5My0yMzJkNTdiZTQzZmEiLCJuYmYiOjE3NjI0NzMyMjIsImV4cCI6MTc2MjQ3NDEyMiwiaWF0IjoxNzYyNDczMjIyfQ.uaa7s1Tn7sGVCcUTJQvJ-FF3a2qJfCnksx6nR31Oskc",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_high"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 1163.9366149902344,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "DEV20251106185341",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3fb3d9754eae04de040c415cfc62700a3b0bb29f40cdd71596ca7df233f68cf57e1ccc8ecc379daae759ffbc8f22adb09cb781f9bb01f7472f1fe877e99e5259dc; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:53:42 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185341"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4078370",
+                "orderNumber": "ORDER20251106185341",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "100.00"
+              }
+            }
+          },
+          "duration_ms": 1163.9366149902344,
+          "timestamp": "2025-11-06T18:53:42.532036"
+        },
+        {
+          "step": "Search Installments",
+          "success": true,
+          "data": {
+            "success": true,
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:53:47.221",
+                "transactionEndDatetime": "2025-11-06 18:53:47.320",
+                "millis": 99
+              },
+              "response": {
+                "merchantCode": "4078370",
+                "bin": "545545",
+                "issuerName": "SCOTIABANK ",
+                "installments": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10",
+                  "11"
+                ],
+                "deferred": "3",
+                "result": {
+                  "messageFriendly": "Operación exitosa"
+                }
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 4856.861591339111,
+            "installments_count": 12,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "X-Correlation-Id": "ac47fcfc-c0b7-4c80-9afa-22c0e8002daa",
+              "transactionId": "DEV20251106185341",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3ffd4e96ad6ca58bfdded9293033abda350d8a6dde57fe870326a3dbb421feab6408b056db327c497ecd7f430a6b69393f7293c3efea2839f99bcc4936b2b7437a; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:53:47 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185341"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4078370",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 4856.861591339111,
+          "timestamp": "2025-11-06T18:53:47.392452"
+        }
+      ],
+      "transaction_ids": [
+        "DEV20251106185341"
+      ]
+    },
+    {
+      "test_id": "CPI-002",
+      "test_name": "Token reutilizable",
+      "start_time": 1762473228.3932693,
+      "end_time": 1762473235.7394118,
+      "total_duration_ms": 7346.142530441284,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "Generate Token",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTM0OCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTM0OCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI1ZTQ2Y2YyNy02MTI3LTQzY2ItOTNmZi1iMzVmY2RjMTJmNDQiLCJuYmYiOjE3NjI0NzMyMjksImV4cCI6MTc2MjQ3NDEyOSwiaWF0IjoxNzYyNDczMjI5fQ.cGRr_8BbSQwnBOt_vJA0mMARZ4rcUvGG9hUMR3Q6loM",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTM0OCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTM0OCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI1ZTQ2Y2YyNy02MTI3LTQzY2ItOTNmZi1iMzVmY2RjMTJmNDQiLCJuYmYiOjE3NjI0NzMyMjksImV4cCI6MTc2MjQ3NDEyOSwiaWF0IjoxNzYyNDczMjI5fQ.cGRr_8BbSQwnBOt_vJA0mMARZ4rcUvGG9hUMR3Q6loM",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_high"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 1044.6906089782715,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "DEV20251106185348",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f75f78345ac47d613fd1a671ebfbf3bb26b58f560fcbdaf8d7ca0491b8adff0bb71f1b9541ed77fa32fc2ef4c4559bac3e1c48d2677a0b39cd6650049cf73bac0; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:53:49 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185348"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4078370",
+                "orderNumber": "ORDER20251106185348",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "100.00"
+              }
+            }
+          },
+          "duration_ms": 1044.6906089782715,
+          "timestamp": "2025-11-06T18:53:49.440623"
+        },
+        {
+          "step": "First Search (Should Succeed)",
+          "success": true,
+          "data": {
+            "success": true,
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:53:54.031",
+                "transactionEndDatetime": "2025-11-06 18:53:54.102",
+                "millis": 71
+              },
+              "response": {
+                "merchantCode": "4078370",
+                "bin": "545545",
+                "issuerName": "SCOTIABANK ",
+                "installments": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10",
+                  "11"
+                ],
+                "deferred": "3",
+                "result": {
+                  "messageFriendly": "Operación exitosa"
+                }
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 4732.630491256714,
+            "installments_count": 12,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "X-Correlation-Id": "88dd0ca1-6d09-495d-b228-86f862cfdda9",
+              "transactionId": "DEV20251106185348",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3faa33fae3045320f38d52e5c7b214bc48fd752d7e3991fcca99c23ab94c2b67b6016aac79392ef59d232ac520c41f9e3ec7104c70a98149fc3bfd82c9946ceb9e; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:53:54 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185348"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4078370",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 4732.630491256714,
+          "timestamp": "2025-11-06T18:53:54.175361"
+        },
+        {
+          "step": "Second Search (Should Succeed - Reusable)",
+          "success": true,
+          "data": {
+            "success": true,
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:53:55.734",
+                "transactionEndDatetime": "2025-11-06 18:53:55.774",
+                "millis": 40
+              },
+              "response": {
+                "merchantCode": "4078370",
+                "bin": "545545",
+                "issuerName": "SCOTIABANK ",
+                "installments": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10",
+                  "11"
+                ],
+                "deferred": "3",
+                "result": {
+                  "messageFriendly": "Operación exitosa"
+                }
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 1062.1943473815918,
+            "installments_count": 12,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "X-Correlation-Id": "03425563-99f9-4768-8892-34adc15e5521",
+              "transactionId": "DEV20251106185348",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f8b465e391e192634326120f6514e65adb7c216fe079e0f3cc2f4e2f10c5ddae71c13d11924d0f103bc6857df18301486aaf983027c4b9b87644ca3223bc69bcb; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:53:55 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185348"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4078370",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 1062.1943473815918,
+          "timestamp": "2025-11-06T18:53:55.739399"
+        }
+      ],
+      "transaction_ids": [
+        "DEV20251106185348"
+      ]
+    },
+    {
+      "test_id": "CPI-003",
+      "test_name": "TransactionId consistente",
+      "start_time": 1762473236.7396014,
+      "end_time": 1762473238.6343675,
+      "total_duration_ms": 1894.766092300415,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "Generate Token",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTM1NiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTM1NiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJjMDhkMDVkMC1hNGQ3LTQzYTktYmJlOS04Zjc3Y2Y1YjQ0ZDIiLCJuYmYiOjE3NjI0NzMyMzcsImV4cCI6MTc2MjQ3NDEzNywiaWF0IjoxNzYyNDczMjM3fQ.SUPrzpPWqeaem9ohmGkLFPBj4McjYXNBRhRoo9Lwolw",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTM1NiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTM1NiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJjMDhkMDVkMC1hNGQ3LTQzYTktYmJlOS04Zjc3Y2Y1YjQ0ZDIiLCJuYmYiOjE3NjI0NzMyMzcsImV4cCI6MTc2MjQ3NDEzNywiaWF0IjoxNzYyNDczMjM3fQ.SUPrzpPWqeaem9ohmGkLFPBj4McjYXNBRhRoo9Lwolw",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_high"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 940.89674949646,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "DEV20251106185356",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f6e3af86a5759e7c5fc120be28ec09546979c65a070bac69c4a27ed2037251e0ead4892f9f1512748b2655e7c3393b87f5ba89ed49bbd95f148d97fb023ecf2e4; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:53:57 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185356"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4078370",
+                "orderNumber": "ORDER20251106185356",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "100.00"
+              }
+            }
+          },
+          "duration_ms": 940.89674949646,
+          "timestamp": "2025-11-06T18:53:57.683527"
+        },
+        {
+          "step": "Search Installments",
+          "success": true,
+          "data": {
+            "success": true,
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:53:58.637",
+                "transactionEndDatetime": "2025-11-06 18:53:58.668",
+                "millis": 30
+              },
+              "response": {
+                "merchantCode": "4078370",
+                "bin": "545545",
+                "issuerName": "SCOTIABANK ",
+                "installments": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10",
+                  "11"
+                ],
+                "deferred": "3",
+                "result": {
+                  "messageFriendly": "Operación exitosa"
+                }
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 948.3053684234619,
+            "installments_count": 12,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "X-Correlation-Id": "226cc9f7-03e2-44a9-a5ff-5571e60846a1",
+              "transactionId": "DEV20251106185356",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f1205f6fd3486ff8e849f3e232bacccaac3e089160cb8b19d2367e16aa730d218acb4b56f87a568ba2279fd91412fb7b10a117cb92744e49ea50a04af16dd4fcc; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:53:57 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185356"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4078370",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 948.3053684234619,
+          "timestamp": "2025-11-06T18:53:58.634347"
+        }
+      ],
+      "transaction_ids": [
+        "DEV20251106185356"
+      ]
+    },
+    {
+      "test_id": "CPI-004",
+      "test_name": "Casos de error",
+      "start_time": 1762473239.634946,
+      "end_time": 1762473245.6977549,
+      "total_duration_ms": 6062.8087520599365,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "Error 1: Token Inválido",
+          "success": true,
+          "data": {
+            "status_code": 401,
+            "duration_ms": 990.4141426086426,
+            "response": {
+              "code": "IMC",
+              "message": "Estructura del request inválida.",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:54:00.647",
+                "transactionEndDatetime": "2025-11-06 18:54:00.652",
+                "millis": 5
+              },
+              "response": {
+                "errorCode": "IMC",
+                "errorMessage": "Estructura del request inválida.",
+                "result": {
+                  "messageFriendly": "Estructura del request inválida."
+                }
+              },
+              "result": {
+                "messageFriendly": "Estructura del request inválida."
+              }
+            }
+          },
+          "duration_ms": 990.4141426086426,
+          "timestamp": "2025-11-06T18:54:00.625487"
+        },
+        {
+          "step": "Error 2: Sin Header Authorization",
+          "success": true,
+          "data": {
+            "status_code": 400,
+            "duration_ms": 1108.2286834716797,
+            "response": {
+              "code": "TN",
+              "message": "El token no debe ser nulo o vacío",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:54:01.752",
+                "transactionEndDatetime": "2025-11-06 18:54:01.755",
+                "millis": 2
+              },
+              "response": {
+                "errorCode": "TN",
+                "errorMessage": "El token no debe ser nulo o vacío",
+                "result": {
+                  "messageFriendly": "token no debe ser nulo o vacío"
+                }
+              },
+              "result": {
+                "messageFriendly": "token no debe ser nulo o vacío"
+              }
+            }
+          },
+          "duration_ms": 1108.2286834716797,
+          "timestamp": "2025-11-06T18:54:01.733830"
+        },
+        {
+          "step": "Error 3: BIN con Formato Inválido",
+          "success": true,
+          "data": {
+            "status_code": 400,
+            "duration_ms": 948.5907554626465,
+            "response": {
+              "code": "IB3",
+              "message": "la longitud del Numero Bin no es válida",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:54:03.723",
+                "transactionEndDatetime": "2025-11-06 18:54:03.724",
+                "millis": 1
+              },
+              "response": {
+                "errorCode": "IB3",
+                "errorMessage": "la longitud del Numero Bin no es válida",
+                "result": {
+                  "messageFriendly": "la longitud del Numero Bin no es válida"
+                }
+              },
+              "result": {
+                "messageFriendly": "la longitud del Numero Bin no es válida"
+              }
+            }
+          },
+          "duration_ms": 948.5907554626465,
+          "timestamp": "2025-11-06T18:54:03.688575"
+        },
+        {
+          "step": "Error 4: Merchant Code Inválido",
+          "success": true,
+          "data": {
+            "status_code": 401,
+            "duration_ms": 981.8882942199707,
+            "response": {
+              "code": "IMC",
+              "message": "El código de comercio es inválido",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:54:04.693",
+                "transactionEndDatetime": "2025-11-06 18:54:04.706",
+                "millis": 13
+              },
+              "response": {
+                "errorCode": "IMC",
+                "errorMessage": "El código de comercio es inválido",
+                "result": {
+                  "messageFriendly": "El código de comercio es inválido"
+                }
+              },
+              "result": {
+                "messageFriendly": "El código de comercio es inválido"
+              }
+            }
+          },
+          "duration_ms": 981.8882942199707,
+          "timestamp": "2025-11-06T18:54:04.670530"
+        },
+        {
+          "step": "Error 5: Parámetro BIN Faltante",
+          "success": true,
+          "data": {
+            "status_code": 400,
+            "duration_ms": 1027.1193981170654,
+            "response": {
+              "code": "IB1",
+              "message": "El Numero Bin no debe ser nulo o vacio",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:54:05.731",
+                "transactionEndDatetime": "2025-11-06 18:54:05.732",
+                "millis": 1
+              },
+              "response": {
+                "errorCode": "IB1",
+                "errorMessage": "El Numero Bin no debe ser nulo o vacio",
+                "result": {
+                  "messageFriendly": "El Numero Bin no debe ser nulo o vacio"
+                }
+              },
+              "result": {
+                "messageFriendly": "El Numero Bin no debe ser nulo o vacio"
+              }
+            }
+          },
+          "duration_ms": 1027.1193981170654,
+          "timestamp": "2025-11-06T18:54:05.697740"
+        }
+      ],
+      "transaction_ids": []
+    },
+    {
+      "test_id": "CPI-005",
+      "test_name": "Diferentes BINs",
+      "start_time": 1762473246.7002485,
+      "end_time": 1762473254.5982134,
+      "total_duration_ms": 7897.964954376221,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "BIN 545545 (SCOTIABANK)",
+          "success": true,
+          "data": {
+            "token_result": {
+              "success": true,
+              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQwNiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQwNiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJjNDg4ZTAwNi0yYTMwLTRmMWQtYTA2YS04NTdjZDE2NWM1NzkiLCJuYmYiOjE3NjI0NzMyNDcsImV4cCI6MTc2MjQ3NDE0NywiaWF0IjoxNzYyNDczMjQ3fQ.p4G-RsxrS3MP9ql-b5Qcfx-M5e7PTEpeyauSjnycG3M",
+              "response": {
+                "code": "00",
+                "message": "OK",
+                "response": {
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQwNiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQwNiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJjNDg4ZTAwNi0yYTMwLTRmMWQtYTA2YS04NTdjZDE2NWM1NzkiLCJuYmYiOjE3NjI0NzMyNDcsImV4cCI6MTc2MjQ3NDE0NywiaWF0IjoxNzYyNDczMjQ3fQ.p4G-RsxrS3MP9ql-b5Qcfx-M5e7PTEpeyauSjnycG3M",
+                  "userOrg": "1snn5n9w",
+                  "userScoring": "izipay_high"
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 920.2227592468262,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "transactionId": "DEV20251106185406",
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3ffff614e59d5b6163348dda950768dd91ef17161782053e5a42c24c641afafbd4d0df70a22e5a4090d025b3e013463a257a59b7afb5d367e382c292f8910cc018; Path=/; ",
+                "Date": "Thu, 06 Nov 2025 23:54:07 GMT",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "DEV20251106185406"
+                },
+                "body": {
+                  "requestSource": "ECOMMERCE",
+                  "merchantCode": "4078370",
+                  "orderNumber": "ORDER20251106185406",
+                  "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                  "amount": "100.00"
+                }
+              }
+            },
+            "installments_result": {
+              "success": true,
+              "response": {
+                "code": "00",
+                "message": "OK",
+                "header": {
+                  "transactionStartDatetime": "2025-11-06 18:54:08.602",
+                  "transactionEndDatetime": "2025-11-06 18:54:08.623",
+                  "millis": 21
+                },
+                "response": {
+                  "merchantCode": "4078370",
+                  "bin": "545545",
+                  "issuerName": "SCOTIABANK ",
+                  "installments": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11"
+                  ],
+                  "deferred": "3",
+                  "result": {
+                    "messageFriendly": "Operación exitosa"
+                  }
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 960.8945846557617,
+              "installments_count": 12,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "X-Correlation-Id": "3a2c1cb1-d3d9-4501-a486-f97e3221ffb8",
+                "transactionId": "DEV20251106185406",
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f727e0b3bebe6c3aff5880222233300bea1260e1b707dd1bce8ac871695fea492ecb23bea7d865eb35376761c00475ac8b233d98890f3941b9c53e14acc643cc4; Path=/; ",
+                "Date": "Thu, 06 Nov 2025 23:54:07 GMT",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "DEV20251106185406"
+                },
+                "body": {
+                  "bin": "545545",
+                  "merchantCode": "4078370",
+                  "language": "ESP"
+                }
+              }
+            },
+            "cuotas_obtenidas": 12
+          },
+          "duration_ms": 1881.117343902588,
+          "timestamp": "2025-11-06T18:54:08.586707"
+        },
+        {
+          "step": "BIN 400917 (SCOTIABANK VISA)",
+          "success": true,
+          "data": {
+            "token_result": {
+              "success": true,
+              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQwOCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQwOCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI1OTMxZDk0ZC1lZmU5LTRjZGUtYWYzOS05MDQ3NDJlZGJmODYiLCJuYmYiOjE3NjI0NzMyNDksImV4cCI6MTc2MjQ3NDE0OSwiaWF0IjoxNzYyNDczMjQ5fQ.JKtFs89rhrb0oWMspol8m86GAP44IJ4aGVfKyAjejo8",
+              "response": {
+                "code": "00",
+                "message": "OK",
+                "response": {
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQwOCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQwOCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI1OTMxZDk0ZC1lZmU5LTRjZGUtYWYzOS05MDQ3NDJlZGJmODYiLCJuYmYiOjE3NjI0NzMyNDksImV4cCI6MTc2MjQ3NDE0OSwiaWF0IjoxNzYyNDczMjQ5fQ.JKtFs89rhrb0oWMspol8m86GAP44IJ4aGVfKyAjejo8",
+                  "userOrg": "1snn5n9w",
+                  "userScoring": "izipay_high"
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 942.7022933959961,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "transactionId": "DEV20251106185408",
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3fb6cf37bd4923078f73211b14e54968b4c775e53855941d3c8558c0f0dc5c0ca16e183090d589785787276b08fa5c7d3ff5bbcd71fa47b00bb6c34bc97a0a48a9; Path=/; ",
+                "Date": "Thu, 06 Nov 2025 23:54:09 GMT",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "DEV20251106185408"
+                },
+                "body": {
+                  "requestSource": "ECOMMERCE",
+                  "merchantCode": "4078370",
+                  "orderNumber": "ORDER20251106185408",
+                  "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                  "amount": "100.00"
+                }
+              }
+            },
+            "installments_result": {
+              "success": true,
+              "response": {
+                "code": "00",
+                "message": "OK",
+                "header": {
+                  "transactionStartDatetime": "2025-11-06 18:54:10.611",
+                  "transactionEndDatetime": "2025-11-06 18:54:10.636",
+                  "millis": 25
+                },
+                "response": {
+                  "merchantCode": "4078370",
+                  "bin": "400917",
+                  "issuerName": "SCOTIABANK ",
+                  "installments": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15",
+                    "16",
+                    "17",
+                    "18",
+                    "19",
+                    "20",
+                    "21",
+                    "22",
+                    "23",
+                    "24",
+                    "25",
+                    "26",
+                    "27",
+                    "28",
+                    "29",
+                    "30",
+                    "31",
+                    "32",
+                    "33",
+                    "34",
+                    "35"
+                  ],
+                  "deferred": "0",
+                  "result": {
+                    "messageFriendly": "Operación exitosa"
+                  }
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 1063.6208057403564,
+              "installments_count": 36,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "X-Correlation-Id": "72d2983f-3586-4f7d-a27b-76ac0a9d981d",
+                "transactionId": "DEV20251106185408",
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f4cabf3c97cbefad31bef98734f845277af424f1fefa0546882d60972d8b1cc83100986e3fbfe9ace9422fe2ab4d4bf2deaf3f8fe713777cd9c97d0ae07d7fbb0; Path=/; ",
+                "Date": "Thu, 06 Nov 2025 23:54:10 GMT",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "DEV20251106185408"
+                },
+                "body": {
+                  "bin": "400917",
+                  "merchantCode": "4078370",
+                  "language": "ESP"
+                }
+              }
+            },
+            "cuotas_obtenidas": 36
+          },
+          "duration_ms": 2006.3230991363525,
+          "timestamp": "2025-11-06T18:54:10.597784"
+        },
+        {
+          "step": "BIN 377893 (BCP)",
+          "success": true,
+          "data": {
+            "token_result": {
+              "success": true,
+              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQxMCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQxMCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiIyYWQyYzg2Yy00MWM3LTQ2Y2ItYWNjNy1iN2JjNjA3YmJlZTMiLCJuYmYiOjE3NjI0NzMyNTEsImV4cCI6MTc2MjQ3NDE1MSwiaWF0IjoxNzYyNDczMjUxfQ.EICKxuzsVHBYFfLqY532gS5MJcWHB4VWCX1GZcKFJa0",
+              "response": {
+                "code": "00",
+                "message": "OK",
+                "response": {
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQxMCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQxMCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiIyYWQyYzg2Yy00MWM3LTQ2Y2ItYWNjNy1iN2JjNjA3YmJlZTMiLCJuYmYiOjE3NjI0NzMyNTEsImV4cCI6MTc2MjQ3NDE1MSwiaWF0IjoxNzYyNDczMjUxfQ.EICKxuzsVHBYFfLqY532gS5MJcWHB4VWCX1GZcKFJa0",
+                  "userOrg": "1snn5n9w",
+                  "userScoring": "izipay_high"
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 958.3241939544678,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "transactionId": "DEV20251106185410",
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f7c86550434985af17b47e709668ac047adce80a94ccd416ccff075daf127ab6994fa29ef9a36b2160e3960c7ce7ff3fb139736ec6afa0194a877d119c4d6bc04; Path=/; ",
+                "Date": "Thu, 06 Nov 2025 23:54:10 GMT",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "DEV20251106185410"
+                },
+                "body": {
+                  "requestSource": "ECOMMERCE",
+                  "merchantCode": "4078370",
+                  "orderNumber": "ORDER20251106185410",
+                  "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                  "amount": "100.00"
+                }
+              }
+            },
+            "installments_result": {
+              "success": true,
+              "response": {
+                "code": "00",
+                "message": "OK",
+                "header": {
+                  "transactionStartDatetime": "2025-11-06 18:54:12.625",
+                  "transactionEndDatetime": "2025-11-06 18:54:12.648",
+                  "millis": 22
+                },
+                "response": {
+                  "merchantCode": "4078370",
+                  "bin": "377893",
+                  "issuerName": "BCP",
+                  "installments": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15",
+                    "16",
+                    "17",
+                    "18",
+                    "19",
+                    "20",
+                    "21",
+                    "22",
+                    "23",
+                    "24",
+                    "25",
+                    "26",
+                    "27",
+                    "28",
+                    "29",
+                    "30",
+                    "31",
+                    "32",
+                    "33",
+                    "34",
+                    "35"
+                  ],
+                  "deferred": "3",
+                  "result": {
+                    "messageFriendly": "Operación exitosa"
+                  }
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 1058.013916015625,
+              "installments_count": 36,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "X-Correlation-Id": "a6c806b9-b7d0-4fcf-9a8a-6a369b9de3ee",
+                "transactionId": "DEV20251106185410",
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f9273a84c614202fda57fb18bb019c73f348f9984fa68cd0cc93c6f093c4e08787c9d551ce00d1d7980221116368aba7167c84a77788d6c0c347be7d2a6d508ac; Path=/; ",
+                "Date": "Thu, 06 Nov 2025 23:54:12 GMT",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "DEV20251106185410"
+                },
+                "body": {
+                  "bin": "377893",
+                  "merchantCode": "4078370",
+                  "language": "ESP"
+                }
+              }
+            },
+            "cuotas_obtenidas": 36
+          },
+          "duration_ms": 2016.3381099700928,
+          "timestamp": "2025-11-06T18:54:12.619066"
+        },
+        {
+          "step": "BIN 553650 (BBVA MC Platinum)",
+          "success": true,
+          "data": {
+            "token_result": {
+              "success": true,
+              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQxMiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQxMiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI3ZjEzMGNhZi0zNzMxLTQ2NzEtYmIzNC1mNmJlZjZhYzFjODIiLCJuYmYiOjE3NjI0NzMyNTMsImV4cCI6MTc2MjQ3NDE1MywiaWF0IjoxNzYyNDczMjUzfQ.a0JzKN6bC0-k9q7BrwBP9z_Jtvtks5rUdAMJUBLDTl0",
+              "response": {
+                "code": "00",
+                "message": "OK",
+                "response": {
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQxMiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQxMiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI3ZjEzMGNhZi0zNzMxLTQ2NzEtYmIzNC1mNmJlZjZhYzFjODIiLCJuYmYiOjE3NjI0NzMyNTMsImV4cCI6MTc2MjQ3NDE1MywiaWF0IjoxNzYyNDczMjUzfQ.a0JzKN6bC0-k9q7BrwBP9z_Jtvtks5rUdAMJUBLDTl0",
+                  "userOrg": "1snn5n9w",
+                  "userScoring": "izipay_high"
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 998.9337921142578,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "transactionId": "DEV20251106185412",
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3fa083a8506ffcf1e634d5e47abeaf509b602f326b99aa0ffdc84516627b855eb8def2661e96b3458b60e9362a3c96c6e3953cdb2fdf5400f47b6cbab6e10c8077; Path=/; ",
+                "Date": "Thu, 06 Nov 2025 23:54:13 GMT",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "DEV20251106185412"
+                },
+                "body": {
+                  "requestSource": "ECOMMERCE",
+                  "merchantCode": "4078370",
+                  "orderNumber": "ORDER20251106185412",
+                  "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                  "amount": "100.00"
+                }
+              }
+            },
+            "installments_result": {
+              "success": true,
+              "response": {
+                "code": "00",
+                "message": "OK",
+                "header": {
+                  "transactionStartDatetime": "2025-11-06 18:54:14.607",
+                  "transactionEndDatetime": "2025-11-06 18:54:14.635",
+                  "millis": 27
+                },
+                "response": {
+                  "merchantCode": "4078370",
+                  "bin": "553650",
+                  "issuerName": "BBVA",
+                  "installments": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15",
+                    "16",
+                    "17",
+                    "18",
+                    "19",
+                    "20",
+                    "21",
+                    "22",
+                    "23",
+                    "24",
+                    "25",
+                    "26",
+                    "27",
+                    "28",
+                    "29",
+                    "30",
+                    "31",
+                    "32",
+                    "33",
+                    "34",
+                    "35"
+                  ],
+                  "deferred": "3",
+                  "result": {
+                    "messageFriendly": "Operación exitosa"
+                  }
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 975.7506847381592,
+              "installments_count": 36,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "X-Correlation-Id": "99edbe3c-c892-42d1-8d16-85cc0cfaf085",
+                "transactionId": "DEV20251106185412",
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f338b808a63e42d3195230cda1c5693cdeebbc4ecbd71aefac6046c7f32f001b3294b41c2821c635e06733d90b116a66a0957ddab98b49946f274eaf2ea359555; Path=/; ",
+                "Date": "Thu, 06 Nov 2025 23:54:13 GMT",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "DEV20251106185412"
+                },
+                "body": {
+                  "bin": "553650",
+                  "merchantCode": "4078370",
+                  "language": "ESP"
+                }
+              }
+            },
+            "cuotas_obtenidas": 36
+          },
+          "duration_ms": 1974.684476852417,
+          "timestamp": "2025-11-06T18:54:14.598195"
+        }
+      ],
+      "transaction_ids": [
+        "DEV20251106185406",
+        "DEV20251106185408",
+        "DEV20251106185410",
+        "DEV20251106185412"
+      ]
+    },
+    {
+      "test_id": "CPI-006",
+      "test_name": "Amount 0.00",
+      "start_time": 1762473255.598478,
+      "end_time": 1762473257.5064094,
+      "total_duration_ms": 1907.9313278198242,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "Generate Token (amount=0.00)",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQxNSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQxNSIsIkFtb3VudCI6IjAuMDAiLCJUb2tlbklkIjoiYzg2ZmY3YTktMmQ5OS00YWVjLThhMzMtZTRhOTgyODA5NThhIiwibmJmIjoxNzYyNDczMjU2LCJleHAiOjE3NjI0NzQxNTYsImlhdCI6MTc2MjQ3MzI1Nn0.o72s2MLv63-GL-WRvzfRj7o6elKd-QfviuDQ1-Km6nI",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQxNSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQxNSIsIkFtb3VudCI6IjAuMDAiLCJUb2tlbklkIjoiYzg2ZmY3YTktMmQ5OS00YWVjLThhMzMtZTRhOTgyODA5NThhIiwibmJmIjoxNzYyNDczMjU2LCJleHAiOjE3NjI0NzQxNTYsImlhdCI6MTc2MjQ3MzI1Nn0.o72s2MLv63-GL-WRvzfRj7o6elKd-QfviuDQ1-Km6nI",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_low"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 923.3133792877197,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "DEV20251106185415",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f24d2fe92efdd5813d1d0f9fb1875866834b3116abef9da4670df4f717f3ec2793261047d383efd97c539f4d87e36053b5e735c728d21a81bfc5f9709e33b32b1; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:54:16 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185415"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4078370",
+                "orderNumber": "ORDER20251106185415",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "0.00"
+              }
+            }
+          },
+          "duration_ms": 923.3133792877197,
+          "timestamp": "2025-11-06T18:54:16.524338"
+        },
+        {
+          "step": "Search Installments",
+          "success": true,
+          "data": {
+            "success": true,
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:54:17.518",
+                "transactionEndDatetime": "2025-11-06 18:54:17.542",
+                "millis": 24
+              },
+              "response": {
+                "merchantCode": "4078370",
+                "bin": "545545",
+                "issuerName": "SCOTIABANK ",
+                "installments": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10",
+                  "11"
+                ],
+                "deferred": "3",
+                "result": {
+                  "messageFriendly": "Operación exitosa"
+                }
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 979.6617031097412,
+            "installments_count": 12,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "X-Correlation-Id": "08d3ac15-0598-4402-97cf-3e78748e6262",
+              "transactionId": "DEV20251106185415",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3fce53c6c56c8a440e20d89d677ce6ea7948c25c3bf894a68b81ad05dc093844d10bf12a567dd0379304fe3477996086de9ed76cd823b4245692b3b37c0cd8ad1f; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:54:16 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185415"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4078370",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 979.6617031097412,
+          "timestamp": "2025-11-06T18:54:17.506387"
+        }
+      ],
+      "transaction_ids": [
+        "DEV20251106185415"
+      ]
+    },
+    {
+      "test_id": "CPI-007",
+      "test_name": "Idioma inglés",
+      "start_time": 1762473258.5071435,
+      "end_time": 1762473260.6087077,
+      "total_duration_ms": 2101.5641689300537,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "Generate Token",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQxOCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQxOCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiIzMGQ5ZDlmNi1lOWFmLTRiOWUtYjAzYi02NDE5MTc2M2UzYmEiLCJuYmYiOjE3NjI0NzMyNTksImV4cCI6MTc2MjQ3NDE1OSwiaWF0IjoxNzYyNDczMjU5fQ.WhSX6cVhv4Kn79F63xfQn66quEJpOwll8wicThoANIs",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNjE4NTQxOCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNjE4NTQxOCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiIzMGQ5ZDlmNi1lOWFmLTRiOWUtYjAzYi02NDE5MTc2M2UzYmEiLCJuYmYiOjE3NjI0NzMyNTksImV4cCI6MTc2MjQ3NDE1OSwiaWF0IjoxNzYyNDczMjU5fQ.WhSX6cVhv4Kn79F63xfQn66quEJpOwll8wicThoANIs",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_high"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 1126.4886856079102,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "DEV20251106185418",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f3d4265a3d4b60c5b256671f72e3ed46b126f988de56a3bd0e579830299098f49c491cb102ff003c9aa160cdc617b71c630415a507c5fe9456ade1442a3e308d9; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:54:19 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185418"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4078370",
+                "orderNumber": "ORDER20251106185418",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "100.00"
+              }
+            }
+          },
+          "duration_ms": 1126.4886856079102,
+          "timestamp": "2025-11-06T18:54:19.635554"
+        },
+        {
+          "step": "Search Installments (language=ENG)",
+          "success": true,
+          "data": {
+            "success": true,
+            "response": {
+              "code": "00",
+              "message": "Approved",
+              "header": {
+                "transactionStartDatetime": "2025-11-06 18:54:20.617",
+                "transactionEndDatetime": "2025-11-06 18:54:20.646",
+                "millis": 28
+              },
+              "response": {
+                "merchantCode": "4078370",
+                "bin": "545545",
+                "issuerName": "SCOTIABANK ",
+                "installments": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10",
+                  "11"
+                ],
+                "deferred": "3",
+                "result": {
+                  "messageFriendly": "Successful"
+                }
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 971.2858200073242,
+            "installments_count": 12,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "X-Correlation-Id": "bed67565-afac-4e40-bd0b-c34f006b54f2",
+              "transactionId": "DEV20251106185418",
+              "X-Content-Type-Options": "nosniff",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f8e3b900ab4337976cb0ed734b4fae1c07084801cde27f68b00dc5f6d4e46ba5fb85753117dda9d1e895eed01045e5f91f549ffd1f3792a7a34cdd4affabc36c1; Path=/; ",
+              "Date": "Thu, 06 Nov 2025 23:54:19 GMT",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "DEV20251106185418"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4078370",
+                "language": "ENG"
+              }
+            }
+          },
+          "duration_ms": 971.2858200073242,
+          "timestamp": "2025-11-06T18:54:20.608691"
+        }
+      ],
+      "transaction_ids": [
+        "DEV20251106185418"
+      ]
+    }
+  ]
+}

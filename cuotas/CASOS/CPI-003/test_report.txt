@@ -1,0 +1,7 @@
+CPI-003: TransactionId Consistente
+TransactionId: DEV20251104183955
+Generate Token: 1010 ms
+Search Installments: 1039 ms
+Total: 2049 ms
+Cuotas: 12
+Estado: PASÓ

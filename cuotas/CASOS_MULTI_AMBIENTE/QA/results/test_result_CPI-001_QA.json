@@ -1,0 +1,91 @@
+{
+  "test_id": "CPI-001",
+  "test_name": "Flujo completo exitoso",
+  "environment": "QA",
+  "start_time": 1762288412.3485773,
+  "end_time": 1762288414.3342495,
+  "total_duration_ms": 1985.6722354888916,
+  "passed": true,
+  "error_message": null,
+  "steps": [
+    {
+      "step": "Generate Token",
+      "success": true,
+      "data": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJRQTIwMjUxMTA0MTUzMzMyIiwiT3JkZXJOdW1iZXIiOiJPUkRFUjIwMjUxMTA0MTUzMzMyIiwiQW1vdW50IjoiMTAwLjAwIiwiVG9rZW5JZCI6ImIxMGQyNzVlLTYxNjEtNDIyNy04OTY5LTg0Y2U4MWY5ZGQzMCIsIm5iZiI6MTc2MjI4ODQxMywiZXhwIjoxNzYyMjg5MzEzLCJpYXQiOjE3NjIyODg0MTN9.EENQ2F4tv8c8tTFaUVXNm9V2VhLEBVl2wLyj0rEANfw",
+        "response": {
+          "code": "00",
+          "message": "OK",
+          "response": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJRQTIwMjUxMTA0MTUzMzMyIiwiT3JkZXJOdW1iZXIiOiJPUkRFUjIwMjUxMTA0MTUzMzMyIiwiQW1vdW50IjoiMTAwLjAwIiwiVG9rZW5JZCI6ImIxMGQyNzVlLTYxNjEtNDIyNy04OTY5LTg0Y2U4MWY5ZGQzMCIsIm5iZiI6MTc2MjI4ODQxMywiZXhwIjoxNzYyMjg5MzEzLCJpYXQiOjE3NjIyODg0MTN9.EENQ2F4tv8c8tTFaUVXNm9V2VhLEBVl2wLyj0rEANfw",
+            "userOrg": "1snn5n9w",
+            "userScoring": "izipay_high"
+          }
+        },
+        "status_code": 200,
+        "duration_ms": 1039.4463539123535,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "transactionId": "QA20251104153332",
+          "Date": "Tue, 04 Nov 2025 20:33:33 GMT",
+          "Transfer-Encoding": "chunked"
+        }
+      },
+      "duration_ms": 1039.4463539123535,
+      "timestamp": "2025-11-04T15:33:33.390711"
+    },
+    {
+      "step": "Search Installments",
+      "success": true,
+      "data": {
+        "success": true,
+        "response": {
+          "code": "00",
+          "message": "Aprobado",
+          "header": {
+            "transactionStartDatetime": "2025-11-04 15:33:34.232",
+            "transactionEndDatetime": "2025-11-04 15:33:34.334",
+            "millis": 102
+          },
+          "response": {
+            "merchantCode": "4078370",
+            "bin": "545545",
+            "issuerName": "SCOTIABANK ",
+            "installments": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "deferred": "3",
+            "result": {
+              "messageFriendly": "Aprobado"
+            }
+          }
+        },
+        "status_code": 200,
+        "duration_ms": 941.1482810974121,
+        "installments_count": 12,
+        "issuer_name": "SCOTIABANK ",
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "X-Correlation-Id": "63431052-c4fb-435c-bc94-9d51a0681bcd",
+          "transactionId": "QA20251104153332",
+          "Date": "Tue, 04 Nov 2025 20:33:34 GMT",
+          "Transfer-Encoding": "chunked"
+        }
+      },
+      "duration_ms": 941.1482810974121,
+      "timestamp": "2025-11-04T15:33:34.334229"
+    }
+  ]
+}

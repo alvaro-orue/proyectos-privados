@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "response": {
+    "code": "00",
+    "message": "OK",
+    "header": {
+      "transactionStartDatetime": "2025-10-31 12:25:44.212",
+      "transactionEndDatetime": "2025-10-31 12:25:44.279",
+      "millis": 66
+    },
+    "response": {
+      "merchantCode": "4078370",
+      "bin": "545545",
+      "issuerName": "SCOTIABANK ",
+      "installments": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "deferred": "3",
+      "result": {
+        "messageFriendly": "Operación exitosa"
+      }
+    }
+  },
+  "status_code": 200,
+  "duration_ms": 1114.7935390472412,
+  "installments_count": 12
+}

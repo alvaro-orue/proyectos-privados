@@ -1,0 +1,23 @@
+CPI-004: Casos de Error
+Total: 5 | Validados: 5 | Con problemas: 0
+
+✅ Error 1: Token Inválido
+   Status Code: 401
+   Duración: 1328.22 ms
+
+✅ Error 2: Sin Header Authorization
+   Status Code: 400
+   Duración: 933.03 ms
+
+✅ Error 3: BIN con Formato Inválido
+   Status Code: 400
+   Duración: 1364.58 ms
+
+✅ Error 4: Merchant Code Inválido
+   Status Code: 401
+   Duración: 1314.51 ms
+
+✅ Error 5: Parámetro BIN Faltante
+   Status Code: 400
+   Duración: 999.71 ms
+

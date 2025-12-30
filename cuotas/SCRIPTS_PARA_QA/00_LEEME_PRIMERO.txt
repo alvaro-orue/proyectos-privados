@@ -1,0 +1,232 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║     PAQUETE DE SCRIPTS DE PRUEBA - API INSTALLMENTS IZIPAY              ║
+║                                                                          ║
+║                     📦 LEER ESTE ARCHIVO PRIMERO 📦                      ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════
+
+⭐ NUEVO: SCRIPT MAESTRO UNIFICADO ⭐
+
+Este paquete ahora incluye un SCRIPT MAESTRO que ejecuta TODOS los casos
+de prueba en un solo comando y genera el informe automáticamente.
+
+📄 Archivo: test_suite_completo.py
+📖 Documentación: INSTRUCCIONES_SUITE_COMPLETA.md
+
+👉 RECOMENDACIÓN: Usar el script maestro para facilidad y rapidez
+
+═══════════════════════════════════════════════════════════════════════════
+
+📋 CONTENIDO DEL PAQUETE
+
+Este paquete contiene scripts Python para probar el API de Installments
+de Izipay en diferentes ambientes.
+
+═══════════════════════════════════════════════════════════════════════════
+
+📁 ARCHIVOS INCLUIDOS:
+
+DOCUMENTACIÓN:
+├── 00_LEEME_PRIMERO.txt             ← Estás aquí
+├── README.md                         ← Documentación principal
+├── INSTRUCCIONES_SUITE_COMPLETA.md   ← 🌟 Guía del script maestro (RECOMENDADO)
+├── INSTRUCCIONES_CONFIGURACION.txt   ← Guía de configuración (scripts individuales)
+├── RESUMEN_SCRIPTS.md                ← Descripción de cada script
+├── NOTA_IMPORTANTE_CONFIG.txt        ← Recordatorio de configuración
+├── BINS_POR_AMBIENTE.md              ← 🏦 Guía de BINs por ambiente (MUY IMPORTANTE)
+└── SOLUCION_ERRORES_BINS.txt         ← 🚨 Solución rápida de errores de BINs
+
+SCRIPT MAESTRO (RECOMENDADO):
+└── test_suite_completo.py   → 🌟 Ejecuta TODOS los tests + genera informe
+
+SCRIPTS INDIVIDUALES (OPCIONAL):
+├── test_cpi_001.py   → Flujo completo exitoso
+├── test_cpi_002.py   → Token reutilizable
+├── test_cpi_003.py   → TransactionId consistente
+├── test_cpi_004.py   → Casos de error
+├── test_cpi_005.py   → Diferentes BINs
+├── test_cpi_006.py   → Amount 0.00
+└── test_cpi_007.py   → Idioma inglés
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚡ INICIO RÁPIDO CON SCRIPT MAESTRO (RECOMENDADO)
+
+0️⃣ ⚠️ ANTES DE EMPEZAR - MUY IMPORTANTE ⚠️
+
+   📖 Lee el archivo BINS_POR_AMBIENTE.md
+
+   ¿Por qué? Algunos BINs NO funcionan en ciertos ambientes.
+   Por ejemplo:
+   - BIN 377893 funciona en DEV/QA pero NO en SANDBOX
+   - BIN 377750 funciona en SANDBOX pero NO en DEV/QA
+
+   El script maestro ya tiene los BINs correctos configurados,
+   pero debes conocer estas diferencias para interpretar resultados.
+
+1️⃣ INSTALAR DEPENDENCIAS
+
+   pip install requests
+
+2️⃣ EJECUTAR SCRIPT MAESTRO
+
+   python test_suite_completo.py
+
+3️⃣ RESPONDER PREGUNTAS
+
+   - Seleccionar ambiente (DEV, SANDBOX, QA, PROD)
+   - Ingresar Merchant Code
+   - Ingresar Public Key
+   - Presionar ENTER para iniciar
+
+4️⃣ ¡LISTO!
+
+   El script ejecutará los 7 tests y generará el informe automáticamente
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚡ INICIO RÁPIDO CON SCRIPTS INDIVIDUALES (OPCIONAL)
+
+1️⃣ INSTALAR DEPENDENCIAS
+
+   pip install requests
+
+2️⃣ CONFIGURAR SCRIPT
+
+   Abrir test_cpi_001.py con un editor de texto
+
+   Buscar la sección CONFIG y modificar:
+
+   CONFIG = {
+       "token_url": "https://TU-AMBIENTE-AQUI/security/v1/Token/Generate",
+       "installments_url": "https://TU-AMBIENTE-AQUI/Installments/v1/Installments/Search",
+       "merchant_code": "TU_COMERCIO",
+       "public_key": "TU_LLAVE_PUBLICA"
+   }
+
+3️⃣ EJECUTAR
+
+   python test_cpi_001.py
+
+═══════════════════════════════════════════════════════════════════════════
+
+⚠️ MUY IMPORTANTE - ANTES DE EJECUTAR
+
+╔════════════════════════════════════════════════════════════════════════╗
+║                                                                        ║
+║  TODOS LOS SCRIPTS VIENEN CONFIGURADOS CON:                           ║
+║                                                                        ║
+║  • Ambiente: DEV (https://testapi-pw.izipay.pe)                       ║
+║  • Comercio: 4078370                                                  ║
+║  • Public Key: VErethUtraQuxas57wuMuquprADrAHAb                       ║
+║                                                                        ║
+║  ⚠️ DEBES CAMBIAR ESTOS VALORES SEGÚN TU AMBIENTE Y COMERCIO ⚠️      ║
+║                                                                        ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 QUÉ HACE CADA SCRIPT
+
+┌─────────┬────────────────────────────────────────────────────────────┐
+│ SCRIPT  │ DESCRIPCIÓN                                                │
+├─────────┼────────────────────────────────────────────────────────────┤
+│ CPI-001 │ Genera token + busca cuotas (flujo básico)                │
+│ CPI-002 │ Verifica que el token se puede reutilizar                 │
+│ CPI-003 │ Valida consistencia del TransactionId                     │
+│ CPI-004 │ Prueba 5 escenarios de error (401, 400)                   │
+│ CPI-005 │ Prueba con 4 BINs diferentes (bancos)                     │
+│ CPI-006 │ Valida transacciones con amount 0.00                      │
+│ CPI-007 │ Valida respuestas en idioma inglés                        │
+└─────────┴────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+
+📂 RESULTADOS GENERADOS
+
+Cada script crea automáticamente 3 archivos en la misma carpeta:
+
+✅ test_result.json       → Resultado completo en JSON
+✅ test_report.txt        → Reporte legible
+✅ step_X_[nombre].json   → Detalles de cada paso
+
+═══════════════════════════════════════════════════════════════════════════
+
+🌐 CONFIGURACIÓN DE AMBIENTES
+
+Ambiente DEV:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"token_url": "https://testapi-pw.izipay.pe/security/v1/Token/Generate"
+"installments_url": "https://testapi-pw.izipay.pe/Installments/v1/Installments/Search"
+
+Ambiente SANDBOX:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"token_url": "https://sandbox-api-pw.izipay.pe/security/v1/Token/Generate"
+"installments_url": "https://sandbox-api-pw.izipay.pe/Installments/v1/Installments/Search"
+
+Ambiente QA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"token_url": "https://qa-api-pw.izipay.pe/security/v1/Token/Generate"
+"installments_url": "https://qa-api-pw.izipay.pe/Installments/v1/Installments/Search"
+
+Ambiente PRODUCCIÓN:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"token_url": "https://api-pw.izipay.pe/security/v1/Token/Generate"
+"installments_url": "https://api-pw.izipay.pe/Installments/v1/Installments/Search"
+
+═══════════════════════════════════════════════════════════════════════════
+
+💡 CONSEJOS
+
+1. 🏦 Lee BINS_POR_AMBIENTE.md ANTES de ejecutar cualquier prueba
+2. Lee el archivo README.md para información completa
+3. Ejecuta test_cpi_001.py primero para validar la configuración
+4. Si un test falla con error 400/403/500, verifica que el BIN esté disponible
+   en ese ambiente (consulta BINS_POR_AMBIENTE.md)
+5. Guarda los archivos de resultados para documentación
+6. NO ejecutes tests de error (CPI-004) en PRODUCCIÓN sin autorización
+
+═══════════════════════════════════════════════════════════════════════════
+
+📞 AYUDA
+
+Si necesitas más información:
+
+1. BINS_POR_AMBIENTE.md              → 🏦 Guía de BINs (MUY IMPORTANTE)
+2. README.md                         → Documentación completa
+3. INSTRUCCIONES_SUITE_COMPLETA.md   → Guía del script maestro
+4. INSTRUCCIONES_CONFIGURACION.txt   → Guía paso a paso
+5. RESUMEN_SCRIPTS.md                → Descripción detallada de scripts
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ LISTA DE VERIFICACIÓN ANTES DE EJECUTAR
+
+□ Python 3.7+ instalado
+□ Librería requests instalada (pip install requests)
+□ Script configurado con URLs correctas
+□ Credenciales del comercio actualizadas
+□ Ambiente activo y accesible
+□ Permisos para ejecutar Python scripts
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎉 ¡LISTO PARA EMPEZAR!
+
+Ahora puedes:
+1. Leer README.md para más detalles
+2. Configurar test_cpi_001.py
+3. Ejecutar: python test_cpi_001.py
+4. Revisar los resultados generados
+
+═══════════════════════════════════════════════════════════════════════════
+
+Creado: 2025-11-04
+Ambiente original: DEV (testapi-pw.izipay.pe)
+Comercio original: 4078370
+Versión: 1.0
+
+═══════════════════════════════════════════════════════════════════════════

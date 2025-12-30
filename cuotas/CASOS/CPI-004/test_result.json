@@ -1,0 +1,44 @@
+{
+  "test_id": "CPI-004",
+  "test_name": "Casos de Error",
+  "total_scenarios": 5,
+  "passed": 5,
+  "failed": 0,
+  "scenarios": [
+    {
+      "name": "Error 1: Token Inválido",
+      "success": true,
+      "status_code": 401,
+      "response": "{\"code\":\"IMC\",\"message\":\"IDX12709: CanReadToken() returned false. JWT is not well formed.\\nThe token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.\",\"header\":{\"transactionStartDatetime\":\"2025-11-04 18:40:22.254\",\"transactionEndDatetime\":\"2025-11-04 18:40:22.309\",\"millis\":55},\"response\":{\"errorCode\":\"IMC\",\"errorMessage\":\"IDX12709: CanReadToken() returned false. JWT is not well formed.\\nThe token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.\",\"result\":{\"messageFriendly\":\"IDX12709: CanReadToken() returned false. JWT is not well formed.\\nThe token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.\"}},\"result\":{\"messageFriendly\":\"IDX12709: CanReadToken() returned false. JWT is not well formed.\\nThe token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.\"}}",
+      "duration_ms": 1328.22
+    },
+    {
+      "name": "Error 2: Sin Header Authorization",
+      "success": true,
+      "status_code": 400,
+      "response": "{\"code\":\"TN\",\"message\":\"El token no debe ser nulo o vacío\",\"header\":{\"transactionStartDatetime\":\"2025-11-04 18:40:24.253\",\"transactionEndDatetime\":\"2025-11-04 18:40:24.257\",\"millis\":4},\"response\":{\"errorCode\":\"TN\",\"errorMessage\":\"El token no debe ser nulo o vacío\",\"result\":{\"messageFriendly\":\"token no debe ser nulo o vacío\"}},\"result\":{\"messageFriendly\":\"token no debe ser nulo o vacío\"}}",
+      "duration_ms": 933.03
+    },
+    {
+      "name": "Error 3: BIN con Formato Inválido",
+      "success": true,
+      "status_code": 400,
+      "response": "{\"code\":\"IB3\",\"message\":\"la longitud del Numero Bin no es válida\",\"header\":{\"transactionStartDatetime\":\"2025-11-04 18:40:27.818\",\"transactionEndDatetime\":\"2025-11-04 18:40:27.819\",\"millis\":1},\"response\":{\"errorCode\":\"IB3\",\"errorMessage\":\"la longitud del Numero Bin no es válida\",\"result\":{\"messageFriendly\":\"la longitud del Numero Bin no es válida\"}},\"result\":{\"messageFriendly\":\"la longitud del Numero Bin no es válida\"}}",
+      "duration_ms": 1364.58
+    },
+    {
+      "name": "Error 4: Merchant Code Inválido",
+      "success": true,
+      "status_code": 401,
+      "response": "{\"code\":\"IMC\",\"message\":\"El código de comercio es inválido\",\"header\":{\"transactionStartDatetime\":\"2025-11-04 18:40:31.586\",\"transactionEndDatetime\":\"2025-11-04 18:40:31.604\",\"millis\":17},\"response\":{\"errorCode\":\"IMC\",\"errorMessage\":\"El código de comercio es inválido\",\"result\":{\"messageFriendly\":\"El código de comercio es inválido\"}},\"result\":{\"messageFriendly\":\"El código de comercio es inválido\"}}",
+      "duration_ms": 1314.51
+    },
+    {
+      "name": "Error 5: Parámetro BIN Faltante",
+      "success": true,
+      "status_code": 400,
+      "response": "{\"code\":\"IB1\",\"message\":\"El Numero Bin no debe ser nulo o vacio\",\"header\":{\"transactionStartDatetime\":\"2025-11-04 18:40:34.695\",\"transactionEndDatetime\":\"2025-11-04 18:40:34.700\",\"millis\":4},\"response\":{\"errorCode\":\"IB1\",\"errorMessage\":\"El Numero Bin no debe ser nulo o vacio\",\"result\":{\"messageFriendly\":\"El Numero Bin no debe ser nulo o vacio\"}},\"result\":{\"messageFriendly\":\"El Numero Bin no debe ser nulo o vacio\"}}",
+      "duration_ms": 999.71
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+============================================================
+REPORTE DE PRUEBA CPI-001 - SANDBOX
+============================================================
+Test ID: CPI-001
+Test Name: Flujo completo exitoso
+Ambiente: SANDBOX
+Fecha: 2025-11-04 12:56:52
+Estado: ✅ PASÓ
+Duración Total: 3855.53ms
+
+------------------------------------------------------------
+PASOS EJECUTADOS
+------------------------------------------------------------
+
+Generate Token:
+  Estado: ✅ Éxito
+  Duración: 1547.28ms
+  Timestamp: 2025-11-04T12:56:50.408979
+  Status Code: 200
+  Response Code: 00
+  Response Message: OK
+
+Search Installments:
+  Estado: ✅ Éxito
+  Duración: 2304.85ms
+  Timestamp: 2025-11-04T12:56:52.715691
+  Status Code: 200
+  Response Code: 00
+  Response Message: Aprobado

@@ -1,0 +1,26 @@
+============================================================
+REPORTE DE PRUEBA CPI-001
+============================================================
+Test ID: CPI-001
+Test Name: Flujo completo exitoso - Generar token y buscar cuotas
+Fecha: 2025-11-07 01:05:27
+Estado: ❌ FALLÓ
+Duración Total: 3687.91ms
+Error: Installments search failed: El token no debe ser nulo o vacío
+
+------------------------------------------------------------
+PASOS EJECUTADOS
+------------------------------------------------------------
+
+Generate Token:
+  Estado: ✅ Éxito
+  Duración: 788.97ms
+  Timestamp: 2025-11-07T01:05:24.381100
+  Status Code: 200
+  Response Code: 00
+  Response Message: OK
+
+Search Installments:
+  Estado: ❌ Fallo
+  Duración: 896.30ms
+  Timestamp: 2025-11-07T01:05:27.278769

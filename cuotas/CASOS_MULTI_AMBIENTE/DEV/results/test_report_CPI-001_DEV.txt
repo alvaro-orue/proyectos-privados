@@ -1,0 +1,29 @@
+============================================================
+REPORTE DE PRUEBA CPI-001 - DEV
+============================================================
+Test ID: CPI-001
+Test Name: Flujo completo exitoso
+Ambiente: DEV
+Fecha: 2025-11-04 18:38:56
+Estado: ✅ PASÓ
+Duración Total: 7285.28ms
+
+------------------------------------------------------------
+PASOS EJECUTADOS
+------------------------------------------------------------
+
+Generate Token:
+  Estado: ✅ Éxito
+  Duración: 1072.25ms
+  Timestamp: 2025-11-04T18:38:50.689112
+  Status Code: 200
+  Response Code: 00
+  Response Message: OK
+
+Search Installments:
+  Estado: ✅ Éxito
+  Duración: 6208.81ms
+  Timestamp: 2025-11-04T18:38:56.899188
+  Status Code: 200
+  Response Code: 00
+  Response Message: OK

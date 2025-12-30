@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJUWE4xNzYxNzQxOTU0MzcxIiwiT3JkZXJOdW1iZXIiOiJPUkRFUjE3NjE3NDE5NTQiLCJBbW91bnQiOiIxMDAuMDAiLCJUb2tlbklkIjoiNmVjMzM5NGYtNWYzYi00ZDdlLWI2YTUtOTc1MDkwNTc1MDAzIiwibmJmIjoxNzYxNzQxOTU1LCJleHAiOjE3NjE3NDI4NTUsImlhdCI6MTc2MTc0MTk1NX0.ObMtruJPJ5t-kAzCP8cVwrED7ZjoDeijgl4x9JY6828",
+  "response": {
+    "code": "00",
+    "message": "OK",
+    "response": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJUWE4xNzYxNzQxOTU0MzcxIiwiT3JkZXJOdW1iZXIiOiJPUkRFUjE3NjE3NDE5NTQiLCJBbW91bnQiOiIxMDAuMDAiLCJUb2tlbklkIjoiNmVjMzM5NGYtNWYzYi00ZDdlLWI2YTUtOTc1MDkwNTc1MDAzIiwibmJmIjoxNzYxNzQxOTU1LCJleHAiOjE3NjE3NDI4NTUsImlhdCI6MTc2MTc0MTk1NX0.ObMtruJPJ5t-kAzCP8cVwrED7ZjoDeijgl4x9JY6828",
+      "userOrg": "1snn5n9w",
+      "userScoring": "izipay_high"
+    }
+  },
+  "status_code": 200,
+  "duration_ms": 400.1903533935547,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "transactionId": "TXN1761741954371",
+    "Date": "Wed, 29 Oct 2025 12:45:55 GMT",
+    "Transfer-Encoding": "chunked"
+  }
+}

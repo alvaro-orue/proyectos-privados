@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJGVkNMMjAyNTExMDcwMTA1MjMiLCJPcmRlck51bWJlciI6Ik9SREVSMjAyNTExMDcwMTA1MjMiLCJBbW91bnQiOiIxMDAuMDAiLCJUb2tlbklkIjoiNmRlOWQ2Y2UtNjRmZS00MTAxLWFlNDUtYjMzMDM2ZmQzNmFmIiwibmJmIjoxNzYyNDk1NTI0LCJleHAiOjE3NjI0OTY0MjQsImlhdCI6MTc2MjQ5NTUyNH0.fGeJqsyz9h-PAT-h5kYPNr5M6sB4bOA3imuYZPA7hpc",
+  "response": {
+    "code": "00",
+    "message": "OK",
+    "response": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJGVkNMMjAyNTExMDcwMTA1MjMiLCJPcmRlck51bWJlciI6Ik9SREVSMjAyNTExMDcwMTA1MjMiLCJBbW91bnQiOiIxMDAuMDAiLCJUb2tlbklkIjoiNmRlOWQ2Y2UtNjRmZS00MTAxLWFlNDUtYjMzMDM2ZmQzNmFmIiwibmJmIjoxNzYyNDk1NTI0LCJleHAiOjE3NjI0OTY0MjQsImlhdCI6MTc2MjQ5NTUyNH0.fGeJqsyz9h-PAT-h5kYPNr5M6sB4bOA3imuYZPA7hpc",
+      "userOrg": "1snn5n9w",
+      "userScoring": "izipay_high"
+    }
+  },
+  "status_code": 200,
+  "duration_ms": 788.9745235443115,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8",
+    "transactionId": "FVCL20251107010523",
+    "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+    "X-Content-Type-Options": "nosniff",
+    "X-Xss-Proteccion": "1, mode=block",
+    "HttpOnly": "HttpOnly",
+    "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3fcbdd13affa290a61daeb18dd57d56dc15e1dc1e000cda8fd381e1121dfb26c0e9fbc7a89f360f85f522bbe8563b5e360d58eced1a1d10bb0e2e1f8135cebe80c; Path=/; ",
+    "Date": "Fri, 07 Nov 2025 06:05:24 GMT",
+    "Transfer-Encoding": "chunked"
+  }
+}

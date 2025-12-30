@@ -1,0 +1,124 @@
+==========================================================================
+INSTRUCCIONES PARA CONFIGURAR LOS SCRIPTS DE PRUEBA
+==========================================================================
+
+ANTES DE EJECUTAR CUALQUIER SCRIPT, DEBES MODIFICAR LA CONFIGURACIÓN
+
+Cada script Python (test_cpi_001.py hasta test_cpi_007.py) tiene una sección
+CONFIG al inicio que debe ser modificada según el ambiente y comercio a probar.
+
+==========================================================================
+PASO 1: ABRIR EL SCRIPT EN UN EDITOR DE TEXTO
+==========================================================================
+
+Abre el archivo test_cpi_XXX.py con cualquier editor de texto (Notepad++, VSCode, etc.)
+
+==========================================================================
+PASO 2: LOCALIZAR LA SECCIÓN CONFIG
+==========================================================================
+
+Busca esta sección cerca del inicio del archivo:
+
+# ============================================================================
+# CONFIGURACIÓN - MODIFICAR ESTOS VALORES SEGÚN EL AMBIENTE A PROBAR
+# ============================================================================
+CONFIG = {
+    "token_url": "https://testapi-pw.izipay.pe/security/v1/Token/Generate",
+    "installments_url": "https://testapi-pw.izipay.pe/Installments/v1/Installments/Search",
+    "merchant_code": "4078370",
+    "public_key": "VErethUtraQuxas57wuMuquprADrAHAb"
+}
+# ============================================================================
+
+==========================================================================
+PASO 3: MODIFICAR LAS URLs SEGÚN EL AMBIENTE
+==========================================================================
+
+Reemplaza las URLs según el ambiente que quieras probar:
+
+----------------------
+AMBIENTE: DEV
+----------------------
+"token_url": "https://testapi-pw.izipay.pe/security/v1/Token/Generate"
+"installments_url": "https://testapi-pw.izipay.pe/Installments/v1/Installments/Search"
+
+----------------------
+AMBIENTE: SANDBOX
+----------------------
+"token_url": "https://sandbox-api-pw.izipay.pe/security/v1/Token/Generate"
+"installments_url": "https://sandbox-api-pw.izipay.pe/Installments/v1/Installments/Search"
+
+----------------------
+AMBIENTE: QA
+----------------------
+"token_url": "https://qa-api-pw.izipay.pe/security/v1/Token/Generate"
+"installments_url": "https://qa-api-pw.izipay.pe/Installments/v1/Installments/Search"
+
+----------------------
+AMBIENTE: PRODUCCIÓN
+----------------------
+"token_url": "https://api-pw.izipay.pe/security/v1/Token/Generate"
+"installments_url": "https://api-pw.izipay.pe/Installments/v1/Installments/Search"
+
+==========================================================================
+PASO 4: MODIFICAR LAS CREDENCIALES DEL COMERCIO
+==========================================================================
+
+Reemplaza los valores de merchant_code y public_key con los del comercio a probar:
+
+"merchant_code": "TU_MERCHANT_CODE_AQUI"
+"public_key": "TU_PUBLIC_KEY_AQUI"
+
+EJEMPLO ACTUAL (Comercio 4078370 en DEV):
+"merchant_code": "4078370"
+"public_key": "VErethUtraQuxas57wuMuquprADrAHAb"
+
+==========================================================================
+PASO 5: GUARDAR EL ARCHIVO
+==========================================================================
+
+Guarda los cambios en el archivo.
+
+==========================================================================
+PASO 6: EJECUTAR EL SCRIPT
+==========================================================================
+
+Abre una terminal/consola en la carpeta donde está el script y ejecuta:
+
+python test_cpi_001.py
+
+O el script que desees ejecutar (test_cpi_002.py, test_cpi_003.py, etc.)
+
+==========================================================================
+EJEMPLO COMPLETO - CONFIGURACIÓN PARA QA
+==========================================================================
+
+CONFIG = {
+    # URLs para ambiente QA
+    "token_url": "https://qa-api-pw.izipay.pe/security/v1/Token/Generate",
+    "installments_url": "https://qa-api-pw.izipay.pe/Installments/v1/Installments/Search",
+
+    # Credenciales del comercio 4078370
+    "merchant_code": "4078370",
+    "public_key": "VErethUtraQuxas57wuMuquprADrAHAb"
+}
+
+==========================================================================
+NOTAS IMPORTANTES
+==========================================================================
+
+1. SIEMPRE verifica que las URLs y credenciales sean correctas para el ambiente
+2. NO uses credenciales de PRODUCCIÓN en ambientes de prueba
+3. Cada script genera archivos de resultados en la misma carpeta donde se ejecuta
+4. Si encuentras errores de conexión, verifica que el ambiente esté activo
+5. Los scripts requieren la librería 'requests': pip install requests
+
+==========================================================================
+SOPORTE
+==========================================================================
+
+Para más información, consulta:
+- README.md (en esta carpeta)
+- DOCUMENTACION_PRUEBAS_DEV.md (documentación completa de pruebas)
+
+==========================================================================

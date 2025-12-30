@@ -1,0 +1,979 @@
+{
+  "ambiente": "SANDBOX",
+  "ambiente_codigo": "SANDBOX",
+  "merchant_code": "4001834",
+  "fecha_ejecucion": "2025-11-10T02:19:07.035681",
+  "duracion_total_segundos": 137.32427716255188,
+  "total_tests": 7,
+  "tests_pasados": 3,
+  "tests_fallados": 4,
+  "resultados": [
+    {
+      "test_id": "CPI-001",
+      "test_name": "Flujo completo exitoso",
+      "start_time": 1762759009.708092,
+      "end_time": 1762759015.9515026,
+      "total_duration_ms": 6243.410587310791,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "Generate Token",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTY0OSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTY0OSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJiZTJjODZiMS02YTQzLTRkZWItYmEyYi03ZjhlOGMxNzBlMzQiLCJuYmYiOjE3NjI3NTkwMTEsImV4cCI6MTc2Mjc1OTkxMSwiaWF0IjoxNzYyNzU5MDExfQ.Djcj9dQ8lZ7cL3WwWbXggX_bSjvPEbWpZc_zFekdSOQ",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTY0OSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTY0OSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJiZTJjODZiMS02YTQzLTRkZWItYmEyYi03ZjhlOGMxNzBlMzQiLCJuYmYiOjE3NjI3NTkwMTEsImV4cCI6MTc2Mjc1OTkxMSwiaWF0IjoxNzYyNzU5MDExfQ.Djcj9dQ8lZ7cL3WwWbXggX_bSjvPEbWpZc_zFekdSOQ",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_high"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 2169.705629348755,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "SBX20251110021649",
+              "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Content-Type-Options": "nosniff",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3f1675f2a288d667cf8c95ef70d2c93a485c9075e65fa6ba0c62dd777eb95847cc9f05230decc508cc928b6606094f6879f9298b7d3fa1ef775655df4fb6886915; Path=/;, TS01dc4fc6=01fd3f9735f080ccb2d77d1b4747d600c1797097b0527f775813480f3d6dad0ab902a730eead997eec418da6abb9b98945c3082c99; Path=/; Secure; HttpOnly; SameSite=Strict; ",
+              "Date": "Mon, 10 Nov 2025 07:16:51 GMT",
+              "x-envoy-upstream-service-time": "885",
+              "x-volterra-location": "dc12-ash",
+              "server": "volt-adc",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021649"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4001834",
+                "orderNumber": "ORDER20251110021649",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "100.00"
+              }
+            }
+          },
+          "duration_ms": 2169.705629348755,
+          "timestamp": "2025-11-10T02:16:51.880790"
+        },
+        {
+          "step": "Search Installments",
+          "success": true,
+          "data": {
+            "success": true,
+            "response": {
+              "code": "00",
+              "message": "Aprobado",
+              "header": {
+                "transactionStartDatetime": "2025-11-10 02:16:55.813",
+                "transactionEndDatetime": "2025-11-10 02:16:55.937",
+                "millis": 123
+              },
+              "response": {
+                "merchantCode": "4001834",
+                "bin": "545545",
+                "issuerName": "SCOTIABANK ",
+                "installments": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10",
+                  "11",
+                  "12",
+                  "13",
+                  "14",
+                  "15",
+                  "16",
+                  "17",
+                  "18",
+                  "19",
+                  "20",
+                  "21",
+                  "22",
+                  "23",
+                  "24",
+                  "25",
+                  "26",
+                  "27",
+                  "28",
+                  "29",
+                  "30",
+                  "31",
+                  "32",
+                  "33",
+                  "34",
+                  "35"
+                ],
+                "deferred": "0",
+                "result": {
+                  "messageFriendly": "Aprobado"
+                }
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 2068.0274963378906,
+            "installments_count": 36,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "X-Correlation-Id": "8da535d8-62b6-4b8e-9099-6e56cb9a5d81",
+              "transactionId": "SBX20251110021649",
+              "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Content-Type-Options": "nosniff",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3fed91a5e53be516c8ae3fbe91817a6cd898ed6d81e4e09944cf9ea71831e014f4b1426f95480d504ed8d616c7ec21ecb319b99aa458260d7df915937f2b360208; Path=/;, TS01dc4fc6=01fd3f97357125bc20da8a4195bc1bfb42a453d820a197cb3d2f3028bcf4d786542087406f0145c8f7c2b975367e28c1fa5d7e4617; Path=/; Secure; HttpOnly; SameSite=Strict; ",
+              "Date": "Mon, 10 Nov 2025 07:16:55 GMT",
+              "x-envoy-upstream-service-time": "983",
+              "x-volterra-location": "c-dc12-ash",
+              "server": "volt-adc",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021649"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4001834",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 2068.0274963378906,
+          "timestamp": "2025-11-10T02:16:55.951482"
+        }
+      ],
+      "transaction_ids": [
+        "SBX20251110021649"
+      ]
+    },
+    {
+      "test_id": "CPI-002",
+      "test_name": "Token reutilizable",
+      "start_time": 1762759016.952436,
+      "end_time": 1762759054.4298375,
+      "total_duration_ms": 37477.40149497986,
+      "passed": false,
+      "error_message": "Token no pudo ser reutilizado",
+      "steps": [
+        {
+          "step": "Generate Token",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTY1NiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTY1NiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJlNTk1Y2ZiMy1kNDVjLTQyMDMtOTA4YS0yZWE5MDIwZGEyMGYiLCJuYmYiOjE3NjI3NTkwMTgsImV4cCI6MTc2Mjc1OTkxOCwiaWF0IjoxNzYyNzU5MDE4fQ.fqQwsMPNgGSZErO00_dUoGWHqsBz6SXudMrLw5x46gc",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTY1NiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTY1NiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiJlNTk1Y2ZiMy1kNDVjLTQyMDMtOTA4YS0yZWE5MDIwZGEyMGYiLCJuYmYiOjE3NjI3NTkwMTgsImV4cCI6MTc2Mjc1OTkxOCwiaWF0IjoxNzYyNzU5MDE4fQ.fqQwsMPNgGSZErO00_dUoGWHqsBz6SXudMrLw5x46gc",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_high"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 2024.4719982147217,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "SBX20251110021656",
+              "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Content-Type-Options": "nosniff",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3f66205a4e523c9c5b3d1da9237786e92a6b64fdb91f96fcf852b5cbef6fb8e49482a5a2c3a416abda4704759a90a44d06d0e910b039263f0753f2c74c50692d42; Path=/;, TS01dc4fc6=01fd3f97354ab8752c14d13e7bece84c2b1f14e5bd91b2cca1eeced6261570bbfcf7972ddf60bd22c49dfca7ad301091988df4158c; Path=/; Secure; HttpOnly; SameSite=Strict; ",
+              "Date": "Mon, 10 Nov 2025 07:16:58 GMT",
+              "x-envoy-upstream-service-time": "882",
+              "x-volterra-location": "b-dc12-ash",
+              "server": "volt-adc",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021656"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4001834",
+                "orderNumber": "ORDER20251110021656",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "100.00"
+              }
+            }
+          },
+          "duration_ms": 2024.4719982147217,
+          "timestamp": "2025-11-10T02:16:58.978464"
+        },
+        {
+          "step": "First Search (Should Succeed)",
+          "success": false,
+          "data": {
+            "success": false,
+            "error": "HTTPSConnectionPool(host='sandbox-api-pw.izipay.pe', port=443): Read timed out. (read timeout=30)",
+            "duration_ms": 30905.37405014038,
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021656"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4001834",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 30905.37405014038,
+          "timestamp": "2025-11-10T02:17:31.884312"
+        },
+        {
+          "step": "Second Search (Should Succeed - Reusable)",
+          "success": false,
+          "data": {
+            "success": false,
+            "error": "Installments search failed: El token no debe ser nulo o vacío",
+            "response": {
+              "code": "TN",
+              "message": "El token no debe ser nulo o vacío",
+              "header": {
+                "transactionStartDatetime": "2025-11-10 02:17:34.332",
+                "transactionEndDatetime": "2025-11-10 02:17:34.407",
+                "millis": 74
+              },
+              "response": {
+                "errorCode": "TN",
+                "errorMessage": "El token no debe ser nulo o vacío",
+                "result": {
+                  "messageFriendly": "token no debe ser nulo o vacío"
+                }
+              },
+              "result": {
+                "messageFriendly": "token no debe ser nulo o vacío"
+              }
+            },
+            "status_code": 400,
+            "duration_ms": 2043.3213710784912,
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021656"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4001834",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 2043.3213710784912,
+          "timestamp": "2025-11-10T02:17:34.429819"
+        }
+      ],
+      "transaction_ids": [
+        "SBX20251110021656"
+      ]
+    },
+    {
+      "test_id": "CPI-003",
+      "test_name": "TransactionId consistente",
+      "start_time": 1762759055.4303901,
+      "end_time": 1762759061.5384068,
+      "total_duration_ms": 6108.016729354858,
+      "passed": false,
+      "error_message": "Installments search failed: El token no debe ser nulo o vacío",
+      "steps": [
+        {
+          "step": "Generate Token",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTczNSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTczNSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI1MjAwNjJmYy04NDM5LTQwZDgtOTgwZS03MTkwMDhlZDM1MGIiLCJuYmYiOjE3NjI3NTkwNTcsImV4cCI6MTc2Mjc1OTk1NywiaWF0IjoxNzYyNzU5MDU3fQ.4FvbScVdCWwb1G_3QoqnWKHOVm6fX4w5XP7R6BBqoRM",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTczNSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTczNSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI1MjAwNjJmYy04NDM5LTQwZDgtOTgwZS03MTkwMDhlZDM1MGIiLCJuYmYiOjE3NjI3NTkwNTcsImV4cCI6MTc2Mjc1OTk1NywiaWF0IjoxNzYyNzU5MDU3fQ.4FvbScVdCWwb1G_3QoqnWKHOVm6fX4w5XP7R6BBqoRM",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_high"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 1984.8098754882812,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "SBX20251110021735",
+              "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Content-Type-Options": "nosniff",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3fdb31e54787dbab37556e2919c379b99faca7252857ddeb024c7a12a6585d9c3f662af78158c7743c880272163fc13d93e4c83158e759a6fc252f7699104ec0ac; Path=/;, TS01dc4fc6=01fd3f97358cc6fdbc0db0cec84d873955317712eb630b4f410c3b358826fc8275dbfdfd91090d618b6be52dde838d2b749493b92a; Path=/; Secure; HttpOnly; SameSite=Strict; ",
+              "Date": "Mon, 10 Nov 2025 07:17:36 GMT",
+              "x-envoy-upstream-service-time": "868",
+              "x-volterra-location": "dc12-ash",
+              "server": "volt-adc",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021735"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4001834",
+                "orderNumber": "ORDER20251110021735",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "100.00"
+              }
+            }
+          },
+          "duration_ms": 1984.8098754882812,
+          "timestamp": "2025-11-10T02:17:37.417000"
+        },
+        {
+          "step": "Search Installments",
+          "success": false,
+          "data": {
+            "success": false,
+            "error": "Installments search failed: El token no debe ser nulo o vacío",
+            "response": {
+              "code": "TN",
+              "message": "El token no debe ser nulo o vacío",
+              "header": {
+                "transactionStartDatetime": "2025-11-10 02:17:41.435",
+                "transactionEndDatetime": "2025-11-10 02:17:41.523",
+                "millis": 87
+              },
+              "response": {
+                "errorCode": "TN",
+                "errorMessage": "El token no debe ser nulo o vacío",
+                "result": {
+                  "messageFriendly": "token no debe ser nulo o vacío"
+                }
+              },
+              "result": {
+                "messageFriendly": "token no debe ser nulo o vacío"
+              }
+            },
+            "status_code": 400,
+            "duration_ms": 2118.9041137695312,
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021735"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4001834",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 2118.9041137695312,
+          "timestamp": "2025-11-10T02:17:41.538388"
+        }
+      ],
+      "transaction_ids": [
+        "SBX20251110021735"
+      ]
+    },
+    {
+      "test_id": "CPI-004",
+      "test_name": "Casos de error",
+      "start_time": 1762759062.5394356,
+      "end_time": 1762759125.3943765,
+      "total_duration_ms": 62854.94089126587,
+      "passed": false,
+      "error_message": "Solo 4 de 5 escenarios pasaron",
+      "steps": [
+        {
+          "step": "Error 1: Token Inválido",
+          "success": true,
+          "data": {
+            "status_code": 401,
+            "duration_ms": 2061.7852210998535,
+            "response": {
+              "code": "IMC",
+              "message": "Estructura del request inválida.",
+              "header": {
+                "transactionStartDatetime": "2025-11-10 02:17:44.475",
+                "transactionEndDatetime": "2025-11-10 02:17:44.479",
+                "millis": 4
+              },
+              "response": {
+                "errorCode": "IMC",
+                "errorMessage": "Estructura del request inválida.",
+                "result": {
+                  "messageFriendly": "Estructura del request inválida."
+                }
+              },
+              "result": {
+                "messageFriendly": "Estructura del request inválida."
+              }
+            }
+          },
+          "duration_ms": 2061.7852210998535,
+          "timestamp": "2025-11-10T02:17:44.601289"
+        },
+        {
+          "step": "Error 2: Sin Header Authorization",
+          "success": true,
+          "data": {
+            "status_code": 400,
+            "duration_ms": 23860.04900932312,
+            "response": {
+              "code": "TN",
+              "message": "El token no debe ser nulo o vacío",
+              "header": {
+                "transactionStartDatetime": "2025-11-10 02:18:08.384",
+                "transactionEndDatetime": "2025-11-10 02:18:08.397",
+                "millis": 12
+              },
+              "response": {
+                "errorCode": "TN",
+                "errorMessage": "El token no debe ser nulo o vacío",
+                "result": {
+                  "messageFriendly": "token no debe ser nulo o vacío"
+                }
+              },
+              "result": {
+                "messageFriendly": "token no debe ser nulo o vacío"
+              }
+            }
+          },
+          "duration_ms": 23860.04900932312,
+          "timestamp": "2025-11-10T02:18:08.461447"
+        },
+        {
+          "step": "Error 3: BIN con Formato Inválido",
+          "success": false,
+          "data": {
+            "error": "HTTPSConnectionPool(host='sandbox-api-pw.izipay.pe', port=443): Read timed out. (read timeout=30)"
+          },
+          "duration_ms": 0,
+          "timestamp": "2025-11-10T02:18:41.612545"
+        },
+        {
+          "step": "Error 4: Merchant Code Inválido",
+          "success": true,
+          "data": {
+            "status_code": 401,
+            "duration_ms": 1811.8820190429688,
+            "response": {
+              "code": "IMC",
+              "message": "merchantId is invalid",
+              "header": {
+                "transactionStartDatetime": "2025-11-10 02:18:43.374",
+                "transactionEndDatetime": "2025-11-10 02:18:43.408",
+                "millis": 33
+              },
+              "response": {
+                "errorCode": "IMC",
+                "errorMessage": "merchantId is invalid",
+                "result": {
+                  "messageFriendly": "merchantId is invalid"
+                }
+              },
+              "result": {
+                "messageFriendly": "merchantId is invalid"
+              }
+            }
+          },
+          "duration_ms": 1811.8820190429688,
+          "timestamp": "2025-11-10T02:18:43.424541"
+        },
+        {
+          "step": "Error 5: Parámetro BIN Faltante",
+          "success": true,
+          "data": {
+            "status_code": 400,
+            "duration_ms": 1969.7115421295166,
+            "response": {
+              "code": "IB1",
+              "message": "El Numero Bin no debe ser nulo o vacio",
+              "header": {
+                "transactionStartDatetime": "2025-11-10 02:18:45.379",
+                "transactionEndDatetime": "2025-11-10 02:18:45.379",
+                "millis": 0
+              },
+              "response": {
+                "errorCode": "IB1",
+                "errorMessage": "El Numero Bin no debe ser nulo o vacio",
+                "result": {
+                  "messageFriendly": "El Numero Bin no debe ser nulo o vacio"
+                }
+              },
+              "result": {
+                "messageFriendly": "El Numero Bin no debe ser nulo o vacio"
+              }
+            }
+          },
+          "duration_ms": 1969.7115421295166,
+          "timestamp": "2025-11-10T02:18:45.394359"
+        }
+      ],
+      "transaction_ids": []
+    },
+    {
+      "test_id": "CPI-005",
+      "test_name": "Diferentes BINs",
+      "start_time": 1762759126.3950694,
+      "end_time": 1762759132.785104,
+      "total_duration_ms": 6390.0346755981445,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "BIN 511578 (BBVA MC Platinum)",
+          "success": true,
+          "data": {
+            "token_result": {
+              "success": true,
+              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTg0NiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTg0NiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI2ZWFhYWE0OC0zMmZmLTRmYzgtYTQzMC1iZDgxMGZjNDQ1NmMiLCJuYmYiOjE3NjI3NTkxMjgsImV4cCI6MTc2Mjc2MDAyOCwiaWF0IjoxNzYyNzU5MTI4fQ.2JNl3-C_s1UsFVKtp5_1P_5PgIojCnh0mxv_TxxBgl0",
+              "response": {
+                "code": "00",
+                "message": "OK",
+                "response": {
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTg0NiIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTg0NiIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI2ZWFhYWE0OC0zMmZmLTRmYzgtYTQzMC1iZDgxMGZjNDQ1NmMiLCJuYmYiOjE3NjI3NTkxMjgsImV4cCI6MTc2Mjc2MDAyOCwiaWF0IjoxNzYyNzU5MTI4fQ.2JNl3-C_s1UsFVKtp5_1P_5PgIojCnh0mxv_TxxBgl0",
+                  "userOrg": "1snn5n9w",
+                  "userScoring": "izipay_high"
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 1988.2557392120361,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "transactionId": "SBX20251110021846",
+                "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Content-Type-Options": "nosniff",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3f93f2bfeeddf34141e665592a11b1a4d6c1404df25e925d6675dbaafa389e9af02f45ed87bed81990f9aa5f7b26d5a972a4ab93a7936f3c41712ae969778cde12; Path=/;, TS01dc4fc6=01fd3f973554e3ef555ee6ea1e4204c0ee1a1d1f0c1ca37a5c124d16e6da36c0fabd18713fe15d54c703df8a724f380c7e43f935fa; Path=/; Secure; HttpOnly; SameSite=Strict; ",
+                "Date": "Mon, 10 Nov 2025 07:18:48 GMT",
+                "x-envoy-upstream-service-time": "871",
+                "x-volterra-location": "c-dc12-ash",
+                "server": "volt-adc",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "SBX20251110021846"
+                },
+                "body": {
+                  "requestSource": "ECOMMERCE",
+                  "merchantCode": "4001834",
+                  "orderNumber": "ORDER20251110021846",
+                  "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                  "amount": "100.00"
+                }
+              }
+            },
+            "installments_result": {
+              "success": true,
+              "response": {
+                "code": "00",
+                "message": "Aprobado",
+                "header": {
+                  "transactionStartDatetime": "2025-11-10 02:18:52.327",
+                  "transactionEndDatetime": "2025-11-10 02:18:52.428",
+                  "millis": 101
+                },
+                "response": {
+                  "merchantCode": "4001834",
+                  "bin": "511578",
+                  "issuerName": "BBVA",
+                  "installments": [
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15",
+                    "16",
+                    "17",
+                    "18",
+                    "19",
+                    "20",
+                    "21",
+                    "22",
+                    "23",
+                    "24",
+                    "25",
+                    "26",
+                    "27",
+                    "28",
+                    "29",
+                    "30",
+                    "31",
+                    "32",
+                    "33",
+                    "34",
+                    "35"
+                  ],
+                  "deferred": "0",
+                  "result": {
+                    "messageFriendly": "Aprobado"
+                  }
+                }
+              },
+              "status_code": 200,
+              "duration_ms": 2397.9861736297607,
+              "installments_count": 36,
+              "headers": {
+                "Content-Type": "application/json; charset=utf-8",
+                "X-Correlation-Id": "0441e8d7-9f0d-4275-a982-576bf7aed589",
+                "transactionId": "SBX20251110021846",
+                "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+                "Referrer-Policy": "strict-origin-when-cross-origin",
+                "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+                "X-Content-Type-Options": "nosniff",
+                "X-Xss-Proteccion": "1, mode=block",
+                "HttpOnly": "HttpOnly",
+                "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3f2add8ac44bbe57542f68a1cb8f7bdd67c163076d0fcd3dd13f9bb55fd34686bdb938eecc9034811dfd53d71e220c35d66f526c6e8943a1a5e7903937ef63525e; Path=/;, TS01dc4fc6=01fd3f973565a1c584b5c777ccbfb3b020ad057f4b839308760e0437b5f314ea9caa80a5121efb8315ada1fa3477f1142de9ce2f9a; Path=/; Secure; HttpOnly; SameSite=Strict; ",
+                "Date": "Mon, 10 Nov 2025 07:18:52 GMT",
+                "x-envoy-upstream-service-time": "972",
+                "x-volterra-location": "c-dc12-ash",
+                "server": "volt-adc",
+                "Transfer-Encoding": "chunked"
+              },
+              "request": {
+                "headers": {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json",
+                  "transactionId": "SBX20251110021846"
+                },
+                "body": {
+                  "bin": "511578",
+                  "merchantCode": "4001834",
+                  "language": "ESP"
+                }
+              }
+            },
+            "cuotas_obtenidas": 36
+          },
+          "duration_ms": 4386.241912841797,
+          "timestamp": "2025-11-10T02:18:52.785095"
+        }
+      ],
+      "transaction_ids": [
+        "SBX20251110021846"
+      ]
+    },
+    {
+      "test_id": "CPI-006",
+      "test_name": "Amount 0.00",
+      "start_time": 1762759133.7859418,
+      "end_time": 1762759139.9419708,
+      "total_duration_ms": 6156.028985977173,
+      "passed": false,
+      "error_message": "Installments search failed: El token no debe ser nulo o vacío",
+      "steps": [
+        {
+          "step": "Generate Token (amount=0.00)",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTg1MyIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTg1MyIsIkFtb3VudCI6IjAuMDAiLCJUb2tlbklkIjoiODY0MjdmYWMtNmI1NC00MDVlLThlZDUtZTRhMDNmNjU1NGU2IiwibmJmIjoxNzYyNzU5MTM1LCJleHAiOjE3NjI3NjAwMzUsImlhdCI6MTc2Mjc1OTEzNX0.-pqQZVkxiU9TqnrOXCo75eM26uSVVtEKpEErAHsnQWk",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTg1MyIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTg1MyIsIkFtb3VudCI6IjAuMDAiLCJUb2tlbklkIjoiODY0MjdmYWMtNmI1NC00MDVlLThlZDUtZTRhMDNmNjU1NGU2IiwibmJmIjoxNzYyNzU5MTM1LCJleHAiOjE3NjI3NjAwMzUsImlhdCI6MTc2Mjc1OTEzNX0.-pqQZVkxiU9TqnrOXCo75eM26uSVVtEKpEErAHsnQWk",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_low"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 2071.7732906341553,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "SBX20251110021853",
+              "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Content-Type-Options": "nosniff",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3f7c4e6f72995a724c9fe5e9ce63d1c7f051e6546456dcc2900e4e73ec6ac1a0a42b3d23788b293545b799a13d31322c4d7e730bb0e0be2703ae8d12b393e2f368; Path=/;, TS01dc4fc6=01fd3f9735aa124bde82b969c6f696c72e94d03beac61f7b6ef2bd73b5c836537c1ea0c36c5a993db60a1bbffead49a40f21ed083f; Path=/; Secure; HttpOnly; SameSite=Strict; ",
+              "Date": "Mon, 10 Nov 2025 07:18:55 GMT",
+              "x-envoy-upstream-service-time": "855",
+              "x-volterra-location": "b-dc12-ash",
+              "server": "volt-adc",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021853"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4001834",
+                "orderNumber": "ORDER20251110021853",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "0.00"
+              }
+            }
+          },
+          "duration_ms": 2071.7732906341553,
+          "timestamp": "2025-11-10T02:18:55.858959"
+        },
+        {
+          "step": "Search Installments",
+          "success": false,
+          "data": {
+            "success": false,
+            "error": "Installments search failed: El token no debe ser nulo o vacío",
+            "response": {
+              "code": "TN",
+              "message": "El token no debe ser nulo o vacío",
+              "header": {
+                "transactionStartDatetime": "2025-11-10 02:18:59.874",
+                "transactionEndDatetime": "2025-11-10 02:18:59.902",
+                "millis": 28
+              },
+              "response": {
+                "errorCode": "TN",
+                "errorMessage": "El token no debe ser nulo o vacío",
+                "result": {
+                  "messageFriendly": "token no debe ser nulo o vacío"
+                }
+              },
+              "result": {
+                "messageFriendly": "token no debe ser nulo o vacío"
+              }
+            },
+            "status_code": 400,
+            "duration_ms": 2081.2060832977295,
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021853"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4001834",
+                "language": "ESP"
+              }
+            }
+          },
+          "duration_ms": 2081.2060832977295,
+          "timestamp": "2025-11-10T02:18:59.941964"
+        }
+      ],
+      "transaction_ids": [
+        "SBX20251110021853"
+      ]
+    },
+    {
+      "test_id": "CPI-007",
+      "test_name": "Idioma inglés",
+      "start_time": 1762759140.9424357,
+      "end_time": 1762759147.0322948,
+      "total_duration_ms": 6089.8590087890625,
+      "passed": true,
+      "error_message": null,
+      "steps": [
+        {
+          "step": "Generate Token",
+          "success": true,
+          "data": {
+            "success": true,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTkwMCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTkwMCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI2MWJhYzg5OC03OWEwLTRmODEtYjkxZi01MDA5NWFhYWFhMTgiLCJuYmYiOjE3NjI3NTkxNDMsImV4cCI6MTc2Mjc2MDA0MywiaWF0IjoxNzYyNzU5MTQzfQ.9Wh8uvCVUkL1Lym6zgnUrZitNcY01N_w8WYMl_NgNpU",
+            "response": {
+              "code": "00",
+              "message": "OK",
+              "response": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiNjY2NjA0MSIsInRyYW5zYWN0aW9uSWQiOiJTQlgyMDI1MTExMDAyMTkwMCIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTExMDAyMTkwMCIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI2MWJhYzg5OC03OWEwLTRmODEtYjkxZi01MDA5NWFhYWFhMTgiLCJuYmYiOjE3NjI3NTkxNDMsImV4cCI6MTc2Mjc2MDA0MywiaWF0IjoxNzYyNzU5MTQzfQ.9Wh8uvCVUkL1Lym6zgnUrZitNcY01N_w8WYMl_NgNpU",
+                "userOrg": "1snn5n9w",
+                "userScoring": "izipay_high"
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 2202.866315841675,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "transactionId": "SBX20251110021900",
+              "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Content-Type-Options": "nosniff",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3f63835d15d256e3a87325fb71dd5527ca4dbb2770cd4f5b595b2364e80f5b89f4b37c4e2de4d6916847e9c0a5ba997b7a092cfe61910414e9c30a5ee0a91b07ef; Path=/;, TS01dc4fc6=01fd3f9735d7ff86d90e697ef3581251badf9ebec51863d496755a8a2fe4d2024c58136a95fd623781ef80e67ae7c8c8378763f7ed; Path=/; Secure; HttpOnly; SameSite=Strict; ",
+              "Date": "Mon, 10 Nov 2025 07:19:03 GMT",
+              "x-envoy-upstream-service-time": "870",
+              "x-volterra-location": "c-dc12-ash",
+              "server": "volt-adc",
+              "Transfer-Encoding": "chunked"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021900"
+              },
+              "body": {
+                "requestSource": "ECOMMERCE",
+                "merchantCode": "4001834",
+                "orderNumber": "ORDER20251110021900",
+                "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
+                "amount": "100.00"
+              }
+            }
+          },
+          "duration_ms": 2202.866315841675,
+          "timestamp": "2025-11-10T02:19:03.146345"
+        },
+        {
+          "step": "Search Installments (language=ENG)",
+          "success": true,
+          "data": {
+            "success": true,
+            "response": {
+              "code": "00",
+              "message": "Approved",
+              "header": {
+                "transactionStartDatetime": "2025-11-10 02:19:06.904",
+                "transactionEndDatetime": "2025-11-10 02:19:06.998",
+                "millis": 93
+              },
+              "response": {
+                "merchantCode": "4001834",
+                "bin": "545545",
+                "issuerName": "SCOTIABANK ",
+                "installments": [
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10",
+                  "11",
+                  "12",
+                  "13",
+                  "14",
+                  "15",
+                  "16",
+                  "17",
+                  "18",
+                  "19",
+                  "20",
+                  "21",
+                  "22",
+                  "23",
+                  "24",
+                  "25",
+                  "26",
+                  "27",
+                  "28",
+                  "29",
+                  "30",
+                  "31",
+                  "32",
+                  "33",
+                  "34",
+                  "35"
+                ],
+                "deferred": "0",
+                "result": {
+                  "messageFriendly": "Approved"
+                }
+              }
+            },
+            "status_code": 200,
+            "duration_ms": 1883.925199508667,
+            "installments_count": 36,
+            "headers": {
+              "Content-Type": "application/json; charset=utf-8",
+              "X-Correlation-Id": "d12ab52a-1d68-4da3-a6cd-28e5004120c4",
+              "transactionId": "SBX20251110021900",
+              "Content-Security-Policy": "default-src https: data: 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.microsoft.com https://clarity.microsoft.com",
+              "Referrer-Policy": "strict-origin-when-cross-origin",
+              "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+              "X-Content-Type-Options": "nosniff",
+              "X-Xss-Proteccion": "1, mode=block",
+              "HttpOnly": "HttpOnly",
+              "Set-Cookie": "izipay_srv_sbx=b1t9w9e1b; path=/; Httponly; Secure, TS015dd3b5=017d415d3ffcae70925c3bb87b65eec702b7fcd4149237af295bed8870453a9fba80d78618cd8155ef93b2d624118869dfa8a946b12898286948e021f62070d4c3e26f56fb; Path=/;, TS01dc4fc6=01fd3f973556188cc7aae85e985e8eb07345e3da4098689c75aed599d77428accbc0b2efcc5d685036dcf4bafeccfa26c0427c68da; Path=/; Secure; HttpOnly; SameSite=Strict; ",
+              "Date": "Mon, 10 Nov 2025 07:19:06 GMT",
+              "Content-Length": "483",
+              "x-envoy-upstream-service-time": "755",
+              "x-volterra-location": "dc12-ash",
+              "server": "volt-adc"
+            },
+            "request": {
+              "headers": {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "transactionId": "SBX20251110021900"
+              },
+              "body": {
+                "bin": "545545",
+                "merchantCode": "4001834",
+                "language": "ENG"
+              }
+            }
+          },
+          "duration_ms": 1883.925199508667,
+          "timestamp": "2025-11-10T02:19:07.032270"
+        }
+      ],
+      "transaction_ids": [
+        "SBX20251110021900"
+      ]
+    }
+  ]
+}

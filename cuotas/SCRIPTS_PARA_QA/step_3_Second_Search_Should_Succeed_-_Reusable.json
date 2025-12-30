@@ -1,0 +1,10 @@
+{
+  "success": false,
+  "error": "Search failed: None",
+  "response": {
+    "code": "500",
+    "errorMessage": "The API Public service threw an error. Check the errors field to view possible details."
+  },
+  "status_code": 500,
+  "duration_ms": 21775.128841400146
+}

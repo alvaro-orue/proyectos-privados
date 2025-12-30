@@ -1,0 +1,13 @@
+{
+  "status_code": 200,
+  "duration_ms": 1010.13,
+  "response": {
+    "code": "00",
+    "message": "OK",
+    "response": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNDE4Mzk1NSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNDE4Mzk1NSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI4YWVkOWY5OC1kNzY5LTQyNzctOWNkNS02YjYzYTRlYTViMzgiLCJuYmYiOjE3NjIyOTk1OTYsImV4cCI6MTc2MjMwMDQ5NiwiaWF0IjoxNzYyMjk5NTk2fQ.szLTgZIaNn6nxB8duzXMToSMcV9dA73y554HtxeYil4",
+      "userOrg": "1snn5n9w",
+      "userScoring": "izipay_high"
+    }
+  }
+}

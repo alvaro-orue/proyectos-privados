@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python test_cpi_001.py:*)",
+      "Bash(dir:*)",
+      "Bash(python diagnose_environment.py:*)",
+      "Bash(python test_cpi_002.py:*)",
+      "Bash(tree:*)",
+      "Bash(python test_cpi_006.py:*)",
+      "Bash(python:*)",
+      "Bash(timeout 300 python:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

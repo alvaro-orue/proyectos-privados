@@ -1,0 +1,103 @@
+{
+  "test_id": "CPI-001",
+  "test_name": "Flujo completo exitoso",
+  "environment": "DEV",
+  "start_time": 1762299529.6139183,
+  "end_time": 1762299536.8991983,
+  "total_duration_ms": 7285.279989242554,
+  "passed": true,
+  "error_message": null,
+  "steps": [
+    {
+      "step": "Generate Token",
+      "success": true,
+      "data": {
+        "success": true,
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNDE4Mzg0OSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNDE4Mzg0OSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI2ZmY1YzA1NC1iODEzLTRhMjMtOWNmYy0wNTNiOTJkOGFmYmUiLCJuYmYiOjE3NjIyOTk1MzAsImV4cCI6MTc2MjMwMDQzMCwiaWF0IjoxNzYyMjk5NTMwfQ.Mlm9iHXrIfp4bbuG1i3Ul9fSVr1CgOxGv6JneObJ-3s",
+        "response": {
+          "code": "00",
+          "message": "OK",
+          "response": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDc4MzcwIiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJERVYyMDI1MTEwNDE4Mzg0OSIsIk9yZGVyTnVtYmVyIjoiT1JERVIyMDI1MTEwNDE4Mzg0OSIsIkFtb3VudCI6IjEwMC4wMCIsIlRva2VuSWQiOiI2ZmY1YzA1NC1iODEzLTRhMjMtOWNmYy0wNTNiOTJkOGFmYmUiLCJuYmYiOjE3NjIyOTk1MzAsImV4cCI6MTc2MjMwMDQzMCwiaWF0IjoxNzYyMjk5NTMwfQ.Mlm9iHXrIfp4bbuG1i3Ul9fSVr1CgOxGv6JneObJ-3s",
+            "userOrg": "1snn5n9w",
+            "userScoring": "izipay_high"
+          }
+        },
+        "status_code": 200,
+        "duration_ms": 1072.2506046295166,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "transactionId": "DEV20251104183849",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+          "X-Xss-Proteccion": "1, mode=block",
+          "HttpOnly": "HttpOnly",
+          "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3ffbe0a07c9059e3eada3c8511564a796094f592e88ed02b80c7843e022d54ca7eb658640083411b7a4f210e0fdb3d8bd3206af338bc89956b820ca6700d4fc2c8; Path=/; ",
+          "Date": "Tue, 04 Nov 2025 23:38:50 GMT",
+          "Transfer-Encoding": "chunked"
+        }
+      },
+      "duration_ms": 1072.2506046295166,
+      "timestamp": "2025-11-04T18:38:50.689112"
+    },
+    {
+      "step": "Search Installments",
+      "success": true,
+      "data": {
+        "success": true,
+        "response": {
+          "code": "00",
+          "message": "OK",
+          "header": {
+            "transactionStartDatetime": "2025-11-04 18:38:55.120",
+            "transactionEndDatetime": "2025-11-04 18:38:56.819",
+            "millis": 1699
+          },
+          "response": {
+            "merchantCode": "4078370",
+            "bin": "545545",
+            "issuerName": "SCOTIABANK ",
+            "installments": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11"
+            ],
+            "deferred": "3",
+            "result": {
+              "messageFriendly": "Operación exitosa"
+            }
+          }
+        },
+        "status_code": 200,
+        "duration_ms": 6208.811044692993,
+        "installments_count": 12,
+        "issuer_name": "SCOTIABANK ",
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "X-Correlation-Id": "9a6c2431-6af7-4efc-90e6-884451732c0b",
+          "transactionId": "DEV20251104183849",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+          "X-Xss-Proteccion": "1, mode=block",
+          "HttpOnly": "HttpOnly",
+          "Set-Cookie": "izipay_srv_dev=b1t9w9e1b; path=/; HttpOnly; Secure, TS015dd3b5=017d415d3f6612671d938df1a498aa237877b95d15c8a2bd739e3edd76619ed996108397f1d822f5edca871e210ce3af988182a4d0a8f22b1d6560a67ac71bd27390b147cb; Path=/; ",
+          "Date": "Tue, 04 Nov 2025 23:38:56 GMT",
+          "Transfer-Encoding": "chunked"
+        }
+      },
+      "duration_ms": 6208.811044692993,
+      "timestamp": "2025-11-04T18:38:56.899188"
+    }
+  ]
+}

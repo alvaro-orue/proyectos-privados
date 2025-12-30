@@ -1,0 +1,90 @@
+{
+  "fecha_generacion": "2025-11-04",
+  "total_bins_db": 263,
+  "bins_recomendados": [
+    {
+      "bin": "377893",
+      "banco": "BCP                           ",
+      "cuotas": 36,
+      "meses": 3,
+      "tipo": "Visa/Mastercard"
+    },
+    {
+      "bin": "377755",
+      "banco": "AMEX INTERBANK                ",
+      "cuotas": 36,
+      "meses": 3,
+      "tipo": "Visa/Mastercard"
+    },
+    {
+      "bin": "553650",
+      "banco": "BBVA MC Platinum              ",
+      "cuotas": 36,
+      "meses": 3,
+      "tipo": "Visa/Mastercard"
+    },
+    {
+      "bin": "377897",
+      "banco": "AMEX                          ",
+      "cuotas": 0,
+      "meses": 3,
+      "tipo": "American Express"
+    }
+  ],
+  "bins_prueba_anteriores": {
+    "545545": "EXISTE - SCOTIABANK",
+    "411111": "NO EXISTE",
+    "424242": "NO EXISTE",
+    "552277": "NO EXISTE"
+  },
+  "bancos_disponibles": [
+    "                              ",
+    "1                             ",
+    "22                            ",
+    "361004                        ",
+    "AMEX                          ",
+    "AMEX INTERBANK                ",
+    "Amex Interbank                ",
+    "BANCO                         ",
+    "BBVA MC Platinum              ",
+    "BBVV                          ",
+    "BCP                           ",
+    "BCP 6                         ",
+    "BIN                           ",
+    "BNAC                          ",
+    "Banco Financiero              ",
+    "Diners                        ",
+    "Diners QA                     ",
+    "EDENRED                       ",
+    "FINANCOR - Ripley Gold        ",
+    "IBK CREDITO                   ",
+    "IBK Pruebas                   ",
+    "MC NUEVO BIN                  ",
+    "MC Prueba Mar                 ",
+    "MC2                           ",
+    "MC3                           ",
+    "MasterCard                    ",
+    "Mastercard Debito             ",
+    "Mastercard Debito2            ",
+    "Prueba Daker                  ",
+    "Prueba Mar                    ",
+    "Pruebas Mar                   ",
+    "SBP MasterCard Gold Chip      ",
+    "SBP MasterCard Standard Chip  ",
+    "SCOTIABANK MC                 ",
+    "SCOTIABANK VISA               ",
+    "TTTT                          ",
+    "VISA                          ",
+    "VISA CUOTAS                   ",
+    "WieseCash                     ",
+    "amex                          ",
+    "diners                        ",
+    "diners qa                     ",
+    "dines                         ",
+    "falabella                     ",
+    "prueba simulador              ",
+    "pruebas amex                  ",
+    "test QA                       ",
+    "visa                          "
+  ]
+}

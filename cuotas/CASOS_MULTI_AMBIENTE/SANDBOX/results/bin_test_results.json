@@ -1,0 +1,78 @@
+{
+  "test_date": "2025-10-29T13:48:25.723955",
+  "environment": "SANDBOX",
+  "merchant_code": "4001834",
+  "results": [
+    {
+      "bin": "545545",
+      "status_code": 500,
+      "response_code": "500",
+      "message": null,
+      "duration_ms": 27961.474418640137,
+      "success": false,
+      "issuer": null,
+      "installments_count": 0,
+      "error_message": "The API Public service threw an error. Check the errors field to view possible details."
+    },
+    {
+      "bin": "411111",
+      "status_code": 400,
+      "response_code": "TN",
+      "message": "El token no debe ser nulo o vacío",
+      "duration_ms": 13989.40896987915,
+      "success": false,
+      "issuer": null,
+      "installments_count": 0,
+      "error_message": null
+    },
+    {
+      "bin": "424242",
+      "status_code": 500,
+      "response_code": "500",
+      "message": null,
+      "duration_ms": 21938.528776168823,
+      "success": false,
+      "issuer": null,
+      "installments_count": 0,
+      "error_message": "The API Public service threw an error. Check the errors field to view possible details."
+    },
+    {
+      "bin": "552277",
+      "status_code": 403,
+      "response_code": "IB0",
+      "message": "Bin invalido",
+      "duration_ms": 8351.889848709106,
+      "success": false,
+      "issuer": null,
+      "installments_count": 0,
+      "error_message": null
+    },
+    {
+      "bin": "450799",
+      "status_code": 500,
+      "response_code": "500",
+      "message": null,
+      "duration_ms": 22251.558303833008,
+      "success": false,
+      "issuer": null,
+      "installments_count": 0,
+      "error_message": "The API Public service threw an error. Check the errors field to view possible details."
+    },
+    {
+      "bin": "542118",
+      "status_code": 400,
+      "response_code": "TN",
+      "message": "El token no debe ser nulo o vacío",
+      "duration_ms": 7521.247625350952,
+      "success": false,
+      "issuer": null,
+      "installments_count": 0,
+      "error_message": null
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "successful": 0,
+    "failed": 6
+  }
+}

@@ -1,0 +1,7 @@
+CPI-005: Diferentes BINs
+Exitosos: 4/4
+
+545545 (SCOTIABANK): PASO - 12 cuotas
+400917 (SCOTIABANK VISA): PASO - 36 cuotas
+377893 (BCP): PASO - 36 cuotas
+553650 (BBVA MC Platinum): PASO - 36 cuotas

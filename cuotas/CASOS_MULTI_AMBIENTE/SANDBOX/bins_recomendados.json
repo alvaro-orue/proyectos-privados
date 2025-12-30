@@ -1,0 +1,132 @@
+{
+  "fecha_generacion": "2025-11-04",
+  "ambiente": "SANDBOX",
+  "total_bins_db": 261,
+  "bins_recomendados": [
+    {
+      "bin": "554911",
+      "banco": "SCOTIABANK MC                 ",
+      "cuotas": 36,
+      "meses": 0,
+      "tipo": "Scotiabank"
+    },
+    {
+      "bin": "545545",
+      "banco": "SCOTIABANK MC                 ",
+      "cuotas": 36,
+      "meses": 0,
+      "tipo": "Scotiabank"
+    },
+    {
+      "bin": "553650",
+      "banco": "BBVA MC Black                 ",
+      "cuotas": 36,
+      "meses": 0,
+      "tipo": "BBVA"
+    },
+    {
+      "bin": "377750",
+      "banco": "AMEX INTERBANK                ",
+      "cuotas": 36,
+      "meses": 3,
+      "tipo": "Interbank"
+    },
+    {
+      "bin": "545545",
+      "banco": "SCOTIABANK MC                 ",
+      "cuotas": 36,
+      "meses": 0,
+      "tipo": "SCOTIABANK MC"
+    },
+    {
+      "bin": "400917",
+      "banco": "SCOTIABANK VISA               ",
+      "cuotas": 36,
+      "meses": 0,
+      "tipo": "SCOTIABANK VISA"
+    },
+    {
+      "bin": "553650",
+      "banco": "BBVA MC Black                 ",
+      "cuotas": 36,
+      "meses": 0,
+      "tipo": "BBVA MC Black"
+    },
+    {
+      "bin": "527556",
+      "banco": "Banco Financiero              ",
+      "cuotas": 3,
+      "meses": 0,
+      "tipo": "Banco Financiero"
+    },
+    {
+      "bin": "520417",
+      "banco": "MasterCard Nacional           ",
+      "cuotas": 36,
+      "meses": 0,
+      "tipo": "MasterCard Nacional"
+    },
+    {
+      "bin": "602008",
+      "banco": "WieseCash                     ",
+      "cuotas": 12,
+      "meses": 1,
+      "tipo": "WieseCash"
+    }
+  ],
+  "bins_actuales_dev_qa": {
+    "545545": "EXISTE",
+    "400917": "EXISTE",
+    "377893": "NO EXISTE",
+    "553650": "EXISTE"
+  },
+  "bancos_disponibles": [
+    "AMEX INTERBANK                ",
+    "BANBIF                        ",
+    "BBVA MC Black                 ",
+    "BBVA MC CLASICA               ",
+    "BBVA MC ORO                   ",
+    "BBVA MC Platinum              ",
+    "BUSINESS CARD                 ",
+    "Banco Credito                 ",
+    "Banco Financiero              ",
+    "CARTE BLANCHE                 ",
+    "CENCOSUD                      ",
+    "CMR                           ",
+    "DC BUSINESS CARD              ",
+    "DC MILES A                    ",
+    "DC MILES B                    ",
+    "DC MILES SE                   ",
+    "DC MILES SPECIAL EDITION      ",
+    "DC Miles Special Edition      ",
+    "DC TRAVEL ACCOUNT             ",
+    "DC YOUNG PROFESSIONAL         ",
+    "DINERS                        ",
+    "DINERS CLUB                   ",
+    "DINERS HIRAOKA                ",
+    "DUAL DINERS                   ",
+    "Diners                        ",
+    "FINANCOR - Ripley Gold        ",
+    "FUNO MC                       ",
+    "FUNO MC INT                   ",
+    "GIFT CARD                     ",
+    "IBK                           ",
+    "IBK MC ORO                    ",
+    "Interbank                     ",
+    "MASTERCARD                    ",
+    "MC RIPLEY                     ",
+    "METRO                         ",
+    "MILES A                       ",
+    "MILES B                       ",
+    "MILES CORPORATE               ",
+    "MasterCard Nacional           ",
+    "RIPLEY PRIVADA                ",
+    "RIPLEY SILVER                 ",
+    "SCOTIABANK MC                 ",
+    "SCOTIABANK VISA               ",
+    "TRAVEL ACCOUNT                ",
+    "VISA                          ",
+    "VISA TARJETA CREDITO          ",
+    "WieseCash                     "
+  ]
+}

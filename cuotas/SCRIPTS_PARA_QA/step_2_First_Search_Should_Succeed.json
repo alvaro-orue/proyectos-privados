@@ -1,0 +1,25 @@
+{
+  "success": false,
+  "error": "Search failed: El token no debe ser nulo o vacío",
+  "response": {
+    "code": "TN",
+    "message": "El token no debe ser nulo o vacío",
+    "header": {
+      "transactionStartDatetime": "2025-11-07 00:10:07.283",
+      "transactionEndDatetime": "2025-11-07 00:10:07.368",
+      "millis": 85
+    },
+    "response": {
+      "errorCode": "TN",
+      "errorMessage": "El token no debe ser nulo o vacío",
+      "result": {
+        "messageFriendly": "token no debe ser nulo o vacío"
+      }
+    },
+    "result": {
+      "messageFriendly": "token no debe ser nulo o vacío"
+    }
+  },
+  "status_code": 400,
+  "duration_ms": 847.7153778076172
+}
