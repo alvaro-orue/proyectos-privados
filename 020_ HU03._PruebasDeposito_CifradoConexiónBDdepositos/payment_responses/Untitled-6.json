@@ -1,0 +1,39 @@
+{
+  "code": "00",
+  "message": "OK",
+  "messageUser": "Operación exitosa",
+  "messageUserEng": "Successful",
+  "response": {
+    "codeAuth": "S55384",
+    "referenceNumber": "0782642",
+    "merchantCode": "4001834",
+    "currency": "PEN",
+    "amount": "1.00",
+    "orderNumber": "ONTE176431108",
+    "dateTransaction": "20251128",
+    "timeTransaction": "012453",
+    "payMethod": "CARD",
+    "card": {
+      "brand": "AE",
+      "pan": "377753*****0152",
+      "save": false
+    },
+    "billing": {
+      "firstName": "Juan",
+      "lastName": "Wick quispe",
+      "email": "jwick@gmail.com",
+      "phoneNumber": "989339999",
+      "street": "calle el demo",
+      "city": "lima",
+      "state": "lima",
+      "country": "PE",
+      "postalCode": "00001",
+      "documentType": "DNI",
+      "document": "10252022",
+      "companyName": ""
+    },
+    "uniqueId": "1546805",
+    "signature": "y3whzIDGpD0rJg6dkqZX6gfJRZNfxFnPH58eBPI6YNs=",
+    "payloadHttp": "{\"code\":\"00\",\"message\":\"OK\",\"messageUser\":\"Operación exitosa\",\"messageUserEng\":\"Successful\",\"response\":{\"codeAuth\":\"S55384\",\"referenceNumber\":\"0782642\",\"merchantCode\":\"4001834\",\"currency\":\"PEN\",\"amount\":\"1.00\",\"orderNumber\":\"ONTE176431108\",\"dateTransaction\":\"20251128\",\"timeTransaction\":\"012453\",\"idLogMPI\":0,\"payMethod\":\"CARD\",\"card\":{\"brand\":\"AE\",\"pan\":\"377753*****0152\",\"save\":false},\"billing\":{\"firstName\":\"Juan\",\"lastName\":\"Wick quispe\",\"email\":\"jwick@gmail.com\",\"phoneNumber\":\"989339999\",\"street\":\"calle el demo\",\"city\":\"lima\",\"state\":\"lima\",\"country\":\"PE\",\"postalCode\":\"00001\",\"documentType\":\"DNI\",\"document\":\"10252022\",\"companyName\":\"\"},\"uniqueId\":\"1546805\"}}"
+  }
+}

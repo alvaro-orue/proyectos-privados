@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python ejecutar_depositos.py:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
