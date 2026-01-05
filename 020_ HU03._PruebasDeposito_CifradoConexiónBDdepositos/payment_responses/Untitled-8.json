@@ -4,18 +4,18 @@
   "messageUser": "Operación exitosa",
   "messageUserEng": "Successful",
   "response": {
-    "codeAuth": "S42032",
-    "referenceNumber": "0822156",
+    "codeAuth": "S54708",
+    "referenceNumber": "0076057",
     "merchantCode": "4001834",
     "currency": "PEN",
     "amount": "1.00",
-    "orderNumber": "ONTE176431114",
-    "dateTransaction": "20251128",
-    "timeTransaction": "012607",
+    "orderNumber": "ONTE176758871",
+    "dateTransaction": "20260104",
+    "timeTransaction": "235204",
     "payMethod": "CARD",
     "card": {
-      "brand": "AE",
-      "pan": "377753*****0152",
+      "brand": "MC",
+      "pan": "520474******1127",
       "save": false
     },
     "billing": {
@@ -32,8 +32,8 @@
       "document": "10252022",
       "companyName": ""
     },
-    "uniqueId": "1546807",
-    "signature": "y4/1m1bbQ2Ah8HMl2mf4vv5qsolb24M+o+CKZzE7ZWc=",
-    "payloadHttp": "{\"code\":\"00\",\"message\":\"OK\",\"messageUser\":\"Operación exitosa\",\"messageUserEng\":\"Successful\",\"response\":{\"codeAuth\":\"S42032\",\"referenceNumber\":\"0822156\",\"merchantCode\":\"4001834\",\"currency\":\"PEN\",\"amount\":\"1.00\",\"orderNumber\":\"ONTE176431114\",\"dateTransaction\":\"20251128\",\"timeTransaction\":\"012607\",\"idLogMPI\":0,\"payMethod\":\"CARD\",\"card\":{\"brand\":\"AE\",\"pan\":\"377753*****0152\",\"save\":false},\"billing\":{\"firstName\":\"Juan\",\"lastName\":\"Wick quispe\",\"email\":\"jwick@gmail.com\",\"phoneNumber\":\"989339999\",\"street\":\"calle el demo\",\"city\":\"lima\",\"state\":\"lima\",\"country\":\"PE\",\"postalCode\":\"00001\",\"documentType\":\"DNI\",\"document\":\"10252022\",\"companyName\":\"\"},\"uniqueId\":\"1546807\"}}"
+    "uniqueId": "1548098",
+    "signature": "PKxwPSn2Cee3L5jhK5ptOT/Uvpnk6c09YwXAp/Gl7xo=",
+    "payloadHttp": "{\"code\":\"00\",\"message\":\"OK\",\"messageUser\":\"Operación exitosa\",\"messageUserEng\":\"Successful\",\"response\":{\"codeAuth\":\"S54708\",\"referenceNumber\":\"0076057\",\"merchantCode\":\"4001834\",\"currency\":\"PEN\",\"amount\":\"1.00\",\"orderNumber\":\"ONTE176758871\",\"dateTransaction\":\"20260104\",\"timeTransaction\":\"235204\",\"idLogMPI\":0,\"payMethod\":\"CARD\",\"card\":{\"brand\":\"MC\",\"pan\":\"520474******1127\",\"save\":false},\"billing\":{\"firstName\":\"Juan\",\"lastName\":\"Wick quispe\",\"email\":\"jwick@gmail.com\",\"phoneNumber\":\"989339999\",\"street\":\"calle el demo\",\"city\":\"lima\",\"state\":\"lima\",\"country\":\"PE\",\"postalCode\":\"00001\",\"documentType\":\"DNI\",\"document\":\"10252022\",\"companyName\":\"\"},\"uniqueId\":\"1548098\"}}"
   }
 }

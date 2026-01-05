@@ -1,7 +1,7 @@
 # Evidencias de Prueba - Caso 09: Operación de Depósito
 
-**Fecha de Ejecución:** 2025-11-28
-**Hora de Ejecución:** 01:27 UTC
+**Fecha de Ejecución:** 2026-01-05
+**Hora de Ejecución:** 01:19 UTC
 **Caso de Prueba:** CP-POS-009
 
 ---
@@ -26,7 +26,7 @@ Ambiente: Test (https://testapi-pw.izipay.pe)
 ```
 Accept: application/json
 Content-Type: application/json
-transactionId: ONTE176431118
+transactionId: ONTE176758874
 ```
 
 **Body:**
@@ -34,7 +34,7 @@ transactionId: ONTE176431118
 {
   "requestSource": "ECOMMERCE",
   "merchantCode": "4001834",
-  "orderNumber": "ONTE176431118",
+  "orderNumber": "ONTE176758874",
   "publicKey": "VErethUtraQuxas57wuMuquprADrAHAb",
   "amount": "1.00"
 }
@@ -50,7 +50,7 @@ transactionId: ONTE176431118
   "code": "00",
   "message": "OK",
   "response": {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiJPTlRFMTc2NDMxMTE4IiwiT3JkZXJOdW1iZXIiOiJPTlRFMTc2NDMxMTE4IiwiQW1vdW50IjoiMS4wMCIsIlRva2VuSWQiOiIzZWEzM2Q5OC1kMDkxLTQzMjMtOThkYy0xM2I3YWMyODcyM2UiLCJuYmYiOjE3NjQzMTEyMjIsImV4cCI6MTc2NDMxMjEyMiwiaWF0IjoxNzY0MzExMjIyfQ.WDoCKzieNUmZOBXyUy68MXFqZjm1hcymkvkJ_D79OYU",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFudENvZGUiOiI0MDAxODM0IiwiZmFjaWxpdGF0b3JDb2RlIjoiMCIsInRyYW5zYWN0aW9uSWQiOiIxNzY3NTkzOTU1Mjg4IiwiT3JkZXJOdW1iZXIiOiJPTlRFMTc2NzU4ODc0IiwiQW1vdW50IjoiMS4wMCIsIlRva2VuSWQiOiIxMTk5MDBiNS00N2YzLTRkOWYtODZhNC0yNGQ3ZGM0YzVmYjQiLCJuYmYiOjE3Njc1OTM5NTUsImV4cCI6MTc2NzU5NDg1NSwiaWF0IjoxNzY3NTkzOTU1fQ.Nd1zo4Btulc0_z6VibCwn0-tIozrMfe8LEyAeKLh9cY",
     "userOrg": "1snn5n9w",
     "userScoring": "izipay_low"
   }
@@ -72,7 +72,7 @@ transactionId: ONTE176431118
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjaGFud...
-transactionId: ONTE176431118
+transactionId: ONTE176758874
 ```
 
 **Body:**
@@ -80,15 +80,15 @@ transactionId: ONTE176431118
 {
   "merchantCode": "4001834",
   "order": {
-    "orderNumber": "ONTE176431118",
+    "orderNumber": "ONTE176758874",
     "currency": "PEN",
     "amount": "1.00",
-    "authorizationCode": "S59279",
+    "authorizationCode": "S91012",
     "payMethod": "CARD",
     "channel": "ecommerce",
-    "uniqueId": "1546808",
-    "transactionDatetime": "2025-11-28 01:26:36.000",
-    "datetimeTerminalTransaction": "2025-11-28 01:26:36.000"
+    "uniqueId": "1548099",
+    "transactionDatetime": "2026-01-04 23:52:32.000",
+    "datetimeTerminalTransaction": "2026-01-04 23:52:32.000"
   },
   "language": "ESP"
 }
@@ -102,33 +102,33 @@ transactionId: ONTE176431118
 ```json
 {
   "header": {
-    "transactionStartDatetime": "2025-11-28 01:27:02.805",
-    "transactionEndDatetime": "2025-11-28 01:27:02.988",
-    "millis": "183"
+    "transactionStartDatetime": "2026-01-05 01:19:15.896",
+    "transactionEndDatetime": "2026-01-05 01:19:16.118",
+    "millis": "222"
   },
   "code": "00",
   "message": "OperaciÃ³n satisfactoria",
   "response": {
     "merchantCode": "4001834",
     "order": {
-      "orderNumber": "ONTE176431118",
+      "orderNumber": "ONTE176758874",
       "currency": "PEN",
       "amount": "1.00",
-      "payMethod": "card",
+      "payMethod": "CARD",
       "channel": "ecommerce"
     },
     "result": {
       "messageFriendly": "OperaciÃ³n satisfactoria",
-      "authorizationCode": "S59279",
-      "uniqueId": "1546808",
-      "batchNumber": "1249"
+      "authorizationCode": "S91012",
+      "uniqueId": "1548099",
+      "batchNumber": "1277"
     }
   }
 }
 ```
 
 **Resultado:** [OK] Deposito procesado exitosamente
-**Batch Number:** 1249
+**Batch Number:** 1277
 
 ---
 
@@ -141,18 +141,18 @@ transactionId: ONTE176431118
   "messageUser": "Operación exitosa",
   "messageUserEng": "Successful",
   "response": {
-    "codeAuth": "S59279",
-    "referenceNumber": "0753334",
+    "codeAuth": "S91012",
+    "referenceNumber": "0716537",
     "merchantCode": "4001834",
     "currency": "PEN",
     "amount": "1.00",
-    "orderNumber": "ONTE176431118",
-    "dateTransaction": "20251128",
-    "timeTransaction": "012636",
+    "orderNumber": "ONTE176758874",
+    "dateTransaction": "20260104",
+    "timeTransaction": "235232",
     "payMethod": "CARD",
     "card": {
-      "brand": "AE",
-      "pan": "377753*****0152",
+      "brand": "MC",
+      "pan": "520474******1127",
       "save": false
     },
     "billing": {
@@ -169,9 +169,9 @@ transactionId: ONTE176431118
       "document": "10252022",
       "companyName": ""
     },
-    "uniqueId": "1546808",
-    "signature": "xeUB8TUJe92CUUn62oo4bQAlb2QW31f7buUrFFJ+UTE=",
-    "payloadHttp": "{\"code\":\"00\",\"message\":\"OK\",\"messageUser\":\"Operación exitosa\",\"messageUserEng\":\"Successful\",\"response\":{\"codeAuth\":\"S59279\",\"referenceNumber\":\"0753334\",\"merchantCode\":\"4001834\",\"currency\":\"PEN\",\"amount\":\"1.00\",\"orderNumber\":\"ONTE176431118\",\"dateTransaction\":\"20251128\",\"timeTransaction\":\"012636\",\"idLogMPI\":0,\"payMethod\":\"CARD\",\"card\":{\"brand\":\"AE\",\"pan\":\"377753*****0152\",\"save\":false},\"billing\":{\"firstName\":\"Juan\",\"lastName\":\"Wick quispe\",\"email\":\"jwick@gmail.com\",\"phoneNumber\":\"989339999\",\"street\":\"calle el demo\",\"city\":\"lima\",\"state\":\"lima\",\"country\":\"PE\",\"postalCode\":\"00001\",\"documentType\":\"DNI\",\"document\":\"10252022\",\"companyName\":\"\"},\"uniqueId\":\"1546808\"}}"
+    "uniqueId": "1548099",
+    "signature": "xtS92YiYN3odnjBmaA+1OY3yQlPXcN95fojsgBOGYm8=",
+    "payloadHttp": "{\"code\":\"00\",\"message\":\"OK\",\"messageUser\":\"Operación exitosa\",\"messageUserEng\":\"Successful\",\"response\":{\"codeAuth\":\"S91012\",\"referenceNumber\":\"0716537\",\"merchantCode\":\"4001834\",\"currency\":\"PEN\",\"amount\":\"1.00\",\"orderNumber\":\"ONTE176758874\",\"dateTransaction\":\"20260104\",\"timeTransaction\":\"235232\",\"idLogMPI\":0,\"payMethod\":\"CARD\",\"card\":{\"brand\":\"MC\",\"pan\":\"520474******1127\",\"save\":false},\"billing\":{\"firstName\":\"Juan\",\"lastName\":\"Wick quispe\",\"email\":\"jwick@gmail.com\",\"phoneNumber\":\"989339999\",\"street\":\"calle el demo\",\"city\":\"lima\",\"state\":\"lima\",\"country\":\"PE\",\"postalCode\":\"00001\",\"documentType\":\"DNI\",\"document\":\"10252022\",\"companyName\":\"\"},\"uniqueId\":\"1548099\"}}"
   }
 }
 ```
@@ -186,22 +186,22 @@ transactionId: ONTE176431118
 | **Generación de Token** | [OK] Exitosa (Code: 00) |
 | **Operación de Depósito** | [OK] Exitosa (Code: 00) |
 | **Monto Depositado** | PEN 1.00 |
-| **Método de Pago** | CARD (AE 377753*****0152) |
+| **Método de Pago** | CARD (MC 520474******1127) |
 | **Canal** | ecommerce |
-| **Authorization Code** | S59279 |
-| **Unique ID** | 1546808 |
-| **Batch Number** | 1249 |
+| **Authorization Code** | S91012 |
+| **Unique ID** | 1548099 |
+| **Batch Number** | 1277 |
 
 ---
 
 ## 6. Validaciones Realizadas
 
 [OK] **Token generado correctamente**
-[OK] **TransactionId consistente** en ambas operaciones (ONTE176431118)
+[OK] **TransactionId consistente** en ambas operaciones (ONTE176758874)
 [OK] **OrderNumber coincidente** con el token de sesión
 [OK] **Monto correcto** (PEN 1.00)
-[OK] **Authorization Code válido** (S59279)
-[OK] **UniqueId correcto** (1546808)
+[OK] **Authorization Code válido** (S91012)
+[OK] **UniqueId correcto** (1548099)
 [OK] **Response Code 00** indica operación exitosa
 [OK] **Batch Number asignado** confirma procesamiento
 

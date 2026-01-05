@@ -14,6 +14,11 @@ from datetime import datetime
 from pathlib import Path
 
 
+def generate_transaction_id():
+    """Genera un ID único de transacción basado en timestamp"""
+    return str(int(datetime.now().timestamp() * 1000))
+
+
 def check_pandoc_installed():
     """Verifica si pandoc está instalado en el sistema"""
     return shutil.which('pandoc') is not None
@@ -58,7 +63,7 @@ class DepositExecutor:
         with open(self.payment_dir / filename, 'r', encoding='utf-8') as f:
             return json.load(f)
 
-    def generate_token(self, payment_data):
+    def generate_token(self, payment_data, transaction_id):
         """Genera token de sesión usando los datos del pago"""
         response = payment_data['response']
         order_number = response['orderNumber']
@@ -69,7 +74,7 @@ class DepositExecutor:
             '--url', f'{self.base_url}/security/v1/Token/Generate',
             '--header', 'Accept: application/json',
             '--header', 'Content-Type: application/json',
-            '--header', f'transactionId: {order_number}',
+            '--header', f'transactionId: {transaction_id}',
             '--data', json.dumps({
                 "requestSource": "ECOMMERCE",
                 "merchantCode": self.credentials["merchantCode"],
@@ -82,7 +87,7 @@ class DepositExecutor:
         result = subprocess.run(cmd, capture_output=True, text=True)
         return json.loads(result.stdout)
 
-    def execute_deposit(self, payment_data, token_response):
+    def execute_deposit(self, payment_data, token_response, transaction_id):
         """Ejecuta el depósito usando el token y datos del pago"""
         response = payment_data['response']
         token = token_response['response']['token']
@@ -117,7 +122,7 @@ class DepositExecutor:
             '--header', 'Accept: application/json',
             '--header', 'Content-Type: application/json',
             '--header', f'Authorization: Bearer {token}',
-            '--header', f'transactionId: {order_number}',
+            '--header', f'transactionId: {transaction_id}',
             '--data', json.dumps(deposit_body)
         ]
 
@@ -311,11 +316,13 @@ transactionId: {order_number}
                 print(f"  [1/4] Cargando payment response...")
                 payment_data = self.load_payment_response(payment_file.name)
                 order_num = payment_data['response']['orderNumber']
+                transaction_id = generate_transaction_id()
                 print(f"        OrderNumber: {order_num}")
+                print(f"        TransactionId: {transaction_id}")
 
                 # 2. Generar token
                 print(f"  [2/4] Generando token de sesión...")
-                token_response = self.generate_token(payment_data)
+                token_response = self.generate_token(payment_data, transaction_id)
                 if token_response.get('code') == '00':
                     print(f"        [OK] Token generado exitosamente")
                 else:
@@ -323,7 +330,7 @@ transactionId: {order_number}
 
                 # 3. Ejecutar depósito
                 print(f"  [3/4] Ejecutando depósito...")
-                deposit_response = self.execute_deposit(payment_data, token_response)
+                deposit_response = self.execute_deposit(payment_data, token_response, transaction_id)
                 if deposit_response.get('code') == '00':
                     batch = deposit_response.get('response', {}).get('result', {}).get('batchNumber', 'N/A')
                     print(f"        [OK] Deposito exitoso - Batch: {batch}")
