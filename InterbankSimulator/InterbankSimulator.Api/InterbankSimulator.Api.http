@@ -1,0 +1,6 @@
+@InterbankSimulator.Api_HostAddress = http://localhost:5231
+
+GET {{InterbankSimulator.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

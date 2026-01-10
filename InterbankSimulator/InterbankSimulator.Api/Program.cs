@@ -1,0 +1,54 @@
+using InterbankSimulator.Api.Infrastructure;
+using Microsoft.Data.Sqlite;
+using System.Data;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// ===== CONFIGURACIÓN DE SERVICIOS =====
+
+// Controladores
+builder.Services.AddControllers();
+
+// Configuración de Swagger/OpenAPI
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Inyección de dependencia: SQLite Connection con Dapper
+builder.Services.AddScoped<IDbConnection>(sp =>
+{
+    var connection = new SqliteConnection("Data Source=simulator.db");
+    connection.Open();
+    return connection;
+});
+
+// ===== INICIALIZACIÓN DE LA BASE DE DATOS =====
+Console.WriteLine("🚀 Iniciando Interbank Simulator...");
+DatabaseBootstrap.Initialize();
+
+var app = builder.Build();
+
+// ===== CONFIGURACIÓN DEL PIPELINE HTTP =====
+
+// Swagger habilitado en todos los entornos (desarrollo y producción)
+app.UseSwagger();
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Interbank Simulator v1");
+    options.RoutePrefix = string.Empty; // Swagger UI en la raíz (http://localhost:5000)
+});
+
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+
+// ===== INICIO DE LA APLICACIÓN =====
+Console.WriteLine("✅ Simulador listo. Accede a Swagger en: http://localhost:5000");
+Console.WriteLine("📋 Endpoints disponibles:");
+Console.WriteLine("   - POST /pago-push/security/v1/oauth");
+Console.WriteLine("   - POST /pago-push/payment/v1/sendPaymentAuthorizationRequestNotification");
+Console.WriteLine("   - POST /pago-push/payment/v1/confirmTransactionPayment");
+Console.WriteLine("   - POST /pago-push/payment/v1/cancelationPaymentAuthorization");
+Console.WriteLine("   - POST /api/simulator/force-pay (Backoffice)");
+Console.WriteLine("   - GET  /api/simulator/transactions (Backoffice)");
+
+app.Run();

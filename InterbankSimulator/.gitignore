@@ -1,0 +1,33 @@
+## Ignorar archivos generados por .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+
+## Base de datos SQLite
+*.db
+*.db-shm
+*.db-wal
+
+## Archivos de Visual Studio / Rider
+.vs/
+.idea/
+*.rsuser
+*.sln.docstates
+
+## Archivos de configuración local
+appsettings.Development.json
+appsettings.Local.json
+
+## Archivos de NuGet
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+## Archivos de build
+*.dll
+*.exe
+*.pdb

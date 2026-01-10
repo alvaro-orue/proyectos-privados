@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet new:*)",
+      "Bash(dotnet sln:*)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet add package:*)",
+      "Bash(dir:*)",
+      "Bash(curl:*)",
+      "Bash(ls:*)",
+      "Bash(dotnet --version:*)"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout /t 10 cmd /c \"dotnet run\")"
+    ]
+  }
+}
