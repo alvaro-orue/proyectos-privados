@@ -139,11 +139,37 @@ Content-Type: application/json
 ```json
 {
   "code": "00",
-  "message": "string",
+  "message": "Notificacion enviada exitosamente",
   "response": {
-    "device": {},
-    "idTransactionInterbank": "string"
+    "device": "SAMSUNG-SM-G998B",
+    "idTransactionInterbank": "IBK-TRX-123456789"
+  },
+  "header": {
+    "transactionStartDatetime": "2026-01-09T10:30:00.000",
+    "transactionEndDatetime": "2026-01-09T10:30:02.500",
+    "millis": "2500"
   }
+}
+```
+
+#### Mapeo de Response - PaymentNotification
+| Campo JSON | Propiedad DTO | Tipo | Descripcion |
+|------------|---------------|------|-------------|
+| `code` | `Code` | string | Codigo de resultado ("00" = exito) |
+| `message` | `Message` | string | Mensaje descriptivo |
+| `response.device` | `Response.Device` | **string** | Identificador del dispositivo del usuario PLIN |
+| `response.idTransactionInterbank` | `Response.IdTransactionInterbank` | string | ID de transaccion generado por Interbank |
+| `header.transactionStartDatetime` | `Header.TransactionStartDatetime` | string | Fecha/hora inicio |
+| `header.transactionEndDatetime` | `Header.TransactionEndDatetime` | string | Fecha/hora fin |
+| `header.millis` | `Header.Millis` | string | Duracion en milisegundos |
+
+> **NOTA:** El campo `device` es un **string**, no un objeto. Contiene el identificador del dispositivo del usuario PLIN.
+
+#### Response Body (JSON) - Error
+```json
+{
+  "ErrorCode": "P01",
+  "ErrorMessage": "El numero de celular no esta registrado en PLIN"
 }
 ```
 
@@ -222,6 +248,38 @@ Content-Type: application/json
 | `device.ip` | string | IP del dispositivo |
 | `device.type` | string | Tipo de dispositivo |
 
+#### Response Body (JSON) - Exito Confirmacion
+```json
+{
+  "code": "00",
+  "message": "Transaccion confirmada exitosamente",
+  "response": null,
+  "header": {
+    "transactionStartDatetime": "2026-01-09T10:32:00.000",
+    "transactionEndDatetime": "2026-01-09T10:32:01.800",
+    "millis": "1800"
+  }
+}
+```
+
+#### Mapeo de Response - Confirmation
+| Campo JSON | Propiedad DTO | Tipo | Descripcion |
+|------------|---------------|------|-------------|
+| `code` | `Code` | string | Codigo de resultado ("00" = exito) |
+| `message` | `Message` | string | Mensaje descriptivo |
+| `response` | `Response` | **null** | ResponseConfirmDto esta vacio (sin propiedades) |
+| `header` | `Header` | HeaderResponseDto | Metadata de tiempos |
+
+> **NOTA:** El DTO `ResponseConfirmDto` esta definido como clase vacia, por lo que `response` sera `null` o `{}`.
+
+#### Response Body (JSON) - Error Confirmacion
+```json
+{
+  "ErrorCode": "403",
+  "ErrorMessage": "Error de comunicacion con el servicio"
+}
+```
+
 #### Politica de Reintentos
 - Misma configuracion que PaymentNotification
 
@@ -280,6 +338,38 @@ Content-Type: application/json
 | `action.actionMessage` | string | Mensaje accion | Constante `"Cerro Pasarela"` |
 | `device.ip` | string | IP dispositivo | Request entrante |
 | `device.type` | string | Tipo dispositivo | Request entrante |
+
+#### Response Body (JSON) - Exito Cancelacion
+```json
+{
+  "code": "00",
+  "message": "Transaccion cancelada exitosamente",
+  "response": null,
+  "header": {
+    "transactionStartDatetime": "2026-01-09T10:32:00.000",
+    "transactionEndDatetime": "2026-01-09T10:32:01.500",
+    "millis": "1500"
+  }
+}
+```
+
+#### Mapeo de Response - Cancel
+| Campo JSON | Propiedad DTO | Tipo | Descripcion |
+|------------|---------------|------|-------------|
+| `code` | `Code` | string | Codigo de resultado ("00" = exito) |
+| `message` | `Message` | string | Mensaje descriptivo |
+| `response` | `Response` | **null** | ResponseCancelDto esta vacio (sin propiedades) |
+| `header` | `Header` | HeaderResponseDto | Metadata de tiempos |
+
+> **NOTA:** El DTO `ResponseCancelDto` esta definido como clase vacia, por lo que `response` sera `null` o `{}`.
+
+#### Response Body (JSON) - Error Cancelacion
+```json
+{
+  "ErrorCode": "403",
+  "ErrorMessage": "Error de comunicacion con el servicio"
+}
+```
 
 #### Politica de Reintentos
 - Misma configuracion que PaymentNotification
@@ -412,12 +502,42 @@ public class EndPoints
 }
 ```
 
-### Codigos que Disparan Reintento
-- `0` - Sin respuesta
-- `404` - No encontrado
-- `500` - Error interno del servidor
-- `503` - Servicio no disponible
-- `504` - Gateway timeout
+### Codigos de Respuesta por Endpoint
+
+#### PaymentNotification (Validation)
+| Codigo | Descripcion | Accion |
+|--------|-------------|--------|
+| `00` | Notificacion enviada exitosamente | Continuar flujo |
+| `P01` | Celular no registrado en PLIN | Informar al cliente |
+| `P02` | Usuario PLIN inactivo | Contactar banco |
+| `P03` | Formato de celular invalido | Verificar numero |
+| `P04` | Limite excedido | Intentar otro dia |
+| `P05` | Monto invalido | Ajustar monto |
+
+#### PaymentConfirm (Confirmation)
+| Codigo | Descripcion | Accion |
+|--------|-------------|--------|
+| `00` | Transaccion confirmada | Cobro exitoso |
+| `403` | Error de comunicacion | Reintentar/Verificar |
+| `500` | Error interno Interbank | Contactar soporte |
+
+#### PaymentAnnulment (Cancel)
+| Codigo | Descripcion | Accion |
+|--------|-------------|--------|
+| `00` | Transaccion cancelada | Finalizado |
+| `403` | Error de comunicacion | Reintentar |
+| `500` | Error interno Interbank | Contactar soporte |
+
+### Codigos HTTP que Disparan Reintento
+| HTTP Status | Descripcion | Comportamiento |
+|-------------|-------------|----------------|
+| `0` | Sin respuesta | Reintento automatico |
+| `404` | No encontrado | Reintento automatico |
+| `500` | Error interno servidor | Reintento automatico |
+| `503` | Servicio no disponible | Reintento automatico |
+| `504` | Gateway timeout | Reintento automatico |
+
+> **Configuracion de reintentos:** Max 3 intentos con 5 segundos de espera entre cada uno.
 
 ---
 
@@ -463,4 +583,106 @@ Las credenciales se obtienen de la base de datos SQL Server mediante el stored p
 
 ---
 
-*Reporte generado automaticamente para el repositorio 0095 - ApiBusiness PagoPush*
+## 11. ESTRUCTURA DE DTOs DE RESPUESTA
+
+### ResponseBaseDto<T> (Clase base generica)
+**Archivo:** `Application.DTO/Response/ResponseBaseDto.cs`
+```csharp
+public class ResponseBaseDto<T>
+{
+    public string Code { get; set; }              // Codigo de resultado
+    public string Message { get; set; }           // Mensaje descriptivo
+    public T Response { get; set; }               // Payload generico
+    public HeaderResponseDto Header { get; set; } // Metadata de tiempos
+    public int StatusCode { get; set; }           // HTTP Status (interno)
+}
+```
+
+### HeaderResponseDto
+```csharp
+public class HeaderResponseDto
+{
+    public string TransactionStartDatetime { get; set; }  // Inicio
+    public string TransactionEndDatetime { get; set; }    // Fin
+    public string Millis { get; set; }                    // Duracion ms
+}
+```
+
+### ResponseDto (PaymentNotification)
+**Archivo:** `Application.DTO/Response/ResponseDto.cs`
+```csharp
+public class ResponseDto : ResponseBaseDto<JsonResponseBody>
+{
+    // Hereda de ResponseBaseDto con Response = JsonResponseBody
+}
+
+public class JsonResponseBody
+{
+    public string Device { get; set; }                // STRING - Dispositivo usuario PLIN
+    public string IdTransactionInterbank { get; set; } // ID transaccion IBK
+}
+```
+
+### ResponseConfirmDto (Confirmation)
+**Archivo:** `Application.DTO/Response/ResponseConfirmDto.cs`
+```csharp
+public class ResponseConfirmDto
+{
+    // Clase VACIA - sin propiedades
+    // Response sera null o {}
+}
+```
+
+### ResponseCancelDto (Cancel)
+**Archivo:** `Application.DTO/Response/ResponseCancelDto.cs`
+```csharp
+public class ResponseCancelDto
+{
+    // Clase VACIA - sin propiedades
+    // Response sera null o {}
+}
+```
+
+### ErrorResponseDto (Errores de Interbank)
+**Archivo:** `Application.DTO/Response/ErrorResponseDto.cs`
+```csharp
+public class ErrorResponseDto
+{
+    public string ErrorCode { get; set; }     // Codigo de error
+    public string ErrorMessage { get; set; }  // Mensaje de error
+}
+```
+
+### NotFoundResponseDto
+**Archivo:** `Application.DTO/Response/NotFoundResponseDto.cs`
+```csharp
+public class NotFoundResponseDto
+{
+    public string StatusCode { get; set; }  // Codigo HTTP
+    public string Message { get; set; }     // Mensaje
+}
+```
+
+---
+
+## 12. NOTAS IMPORTANTES
+
+### Sobre el campo `device` en PaymentNotification
+- El campo `device` en `JsonResponseBody` es de tipo **string**, NO un objeto
+- Contiene el identificador del dispositivo del usuario PLIN (ej: "SAMSUNG-SM-G998B")
+- Este valor es retornado por Interbank al procesar la notificacion
+
+### Sobre ResponseConfirmDto y ResponseCancelDto
+- Ambos DTOs estan definidos como clases vacias (sin propiedades)
+- El campo `response` en la respuesta sera `null` o `{}`
+- Solo se utilizan `code` y `message` para determinar el resultado
+
+### Sobre el campo `statusCode`
+- `StatusCode` en `ResponseBaseDto` tiene el atributo `[JsonIgnore]`
+- Es un campo interno usado para el manejo de respuestas HTTP
+- No se serializa en la respuesta JSON al cliente
+
+---
+
+*Reporte generado y corregido para el repositorio 0095 - ApiBusiness PagoPush*
+*Ultima actualizacion: Enero 2026*
