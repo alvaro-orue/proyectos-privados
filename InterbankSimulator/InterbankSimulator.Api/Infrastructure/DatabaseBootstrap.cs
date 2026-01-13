@@ -23,14 +23,23 @@ public class DatabaseBootstrap
         using var connection = new SqliteConnection(ConnectionString);
         connection.Open();
 
+        // Eliminar tabla antigua si existe (para migrar a nuevo schema)
+        var dropTableSql = "DROP TABLE IF EXISTS SimulatedTransactions;";
+        connection.Execute(dropTableSql);
+
         var createTableSql = @"
             CREATE TABLE IF NOT EXISTS SimulatedTransactions (
-                TransactionId TEXT PRIMARY KEY,
-                PhoneNumber TEXT NOT NULL,
+                IdOrder TEXT NOT NULL,
+                IdTransactionPasarela TEXT PRIMARY KEY,
+                IdTransactionInterbank TEXT NOT NULL UNIQUE,
+                CommerceCode TEXT NOT NULL,
+                CommerceName TEXT NOT NULL,
+                CellPhoneNumber TEXT NOT NULL,
                 Amount REAL NOT NULL,
+                Currency TEXT NOT NULL DEFAULT 'PEN',
+                DeviceIp TEXT,
+                DeviceType TEXT,
                 Status TEXT NOT NULL DEFAULT 'PENDING',
-                CodeAuth TEXT NOT NULL,
-                UniqueId TEXT NOT NULL UNIQUE,
                 CreatedAt TEXT NOT NULL
             );
         ";

@@ -48,7 +48,5 @@ Console.WriteLine("   - POST /pago-push/security/v1/oauth");
 Console.WriteLine("   - POST /pago-push/payment/v1/sendPaymentAuthorizationRequestNotification");
 Console.WriteLine("   - POST /pago-push/payment/v1/confirmTransactionPayment");
 Console.WriteLine("   - POST /pago-push/payment/v1/cancelationPaymentAuthorization");
-Console.WriteLine("   - POST /api/simulator/force-pay (Backoffice)");
-Console.WriteLine("   - GET  /api/simulator/transactions (Backoffice)");
 
 app.Run();

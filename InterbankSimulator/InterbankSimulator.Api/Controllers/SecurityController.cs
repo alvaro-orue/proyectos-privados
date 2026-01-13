@@ -26,7 +26,8 @@ public class SecurityController : ControllerBase
         {
             AccessToken = $"MOCK-TOKEN-{Guid.NewGuid():N}",
             TokenType = "Bearer",
-            ExpiresIn = 3600
+            ExpiresIn = "3600",
+            ExtExpiresIn = "3600"
         };
 
         return Ok(response);

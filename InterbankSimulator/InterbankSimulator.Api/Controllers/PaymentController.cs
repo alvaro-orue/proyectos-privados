@@ -26,44 +26,52 @@ public class PaymentController : ControllerBase
     [HttpPost("sendPaymentAuthorizationRequestNotification")]
     public async Task<IActionResult> SendPaymentAuthorizationRequest([FromBody] PaymentAuthorizationRequest request)
     {
-        _logger.LogInformation("💳 Solicitud de pago recibida: {PhoneNumber} - S/ {Amount}",
-            request.PhoneNumber, request.Amount);
+        _logger.LogInformation("💳 Solicitud de pago recibida: {CellPhone} - {Currency} {Amount}",
+            request.Customer.CellPhoneNumber, request.Pay.Money, request.Pay.Amount);
 
-        // Generar datos simulados
-        var uniqueId = Guid.NewGuid().ToString();
-        var codeAuth = new Random().Next(100000, 999999).ToString();
+        // Generar ID de transacción Interbank simulado
+        var idTransactionInterbank = Guid.NewGuid().ToString();
 
         var transaction = new SimulatedTransaction
         {
-            TransactionId = request.TransactionId,
-            PhoneNumber = request.PhoneNumber,
-            Amount = request.Amount,
+            IdOrder = request.IdOrder,
+            IdTransactionPasarela = request.IdTransactionPasarela,
+            IdTransactionInterbank = idTransactionInterbank,
+            CommerceCode = request.Commerce.Code,
+            CommerceName = request.Commerce.Name,
+            CellPhoneNumber = request.Customer.CellPhoneNumber,
+            Amount = request.Pay.Amount,
+            Currency = request.Pay.Money,
+            DeviceIp = request.Device.Ip,
+            DeviceType = request.Device.Type,
             Status = "PENDING",
-            CodeAuth = codeAuth,
-            UniqueId = uniqueId,
             CreatedAt = DateTime.UtcNow.ToString("o")
         };
 
         // Insertar en SQLite
         var sql = @"
             INSERT INTO SimulatedTransactions
-            (TransactionId, PhoneNumber, Amount, Status, CodeAuth, UniqueId, CreatedAt)
+            (IdOrder, IdTransactionPasarela, IdTransactionInterbank, CommerceCode, CommerceName,
+             CellPhoneNumber, Amount, Currency, DeviceIp, DeviceType, Status, CreatedAt)
             VALUES
-            (@TransactionId, @PhoneNumber, @Amount, @Status, @CodeAuth, @UniqueId, @CreatedAt)
+            (@IdOrder, @IdTransactionPasarela, @IdTransactionInterbank, @CommerceCode, @CommerceName,
+             @CellPhoneNumber, @Amount, @Currency, @DeviceIp, @DeviceType, @Status, @CreatedAt)
         ";
 
         await _dbConnection.ExecuteAsync(sql, transaction);
 
-        _logger.LogInformation("✅ Transacción guardada: UniqueId={UniqueId}, CodeAuth={CodeAuth}",
-            uniqueId, codeAuth);
+        _logger.LogInformation("✅ Transacción guardada: IdTransactionInterbank={IdTransactionInterbank}",
+            idTransactionInterbank);
 
         var response = new PaymentAuthorizationResponse
         {
-            UniqueId = uniqueId,
-            CodeAuth = codeAuth,
-            Status = "PENDING",
+            Code = "00",
             Message = "Solicitud de pago enviada correctamente",
-            TransactionId = request.TransactionId
+            Response = new PaymentAuthorizationResponseData
+            {
+                Device = new { },
+                IdTransactionInterbank = idTransactionInterbank
+            }
         };
 
         return Ok(response);
@@ -73,30 +81,46 @@ public class PaymentController : ControllerBase
     /// Confirma una transacción de pago (simula aprobación del cliente)
     /// </summary>
     [HttpPost("confirmTransactionPayment")]
-    public async Task<IActionResult> ConfirmTransaction([FromBody] TransactionActionRequest request)
+    public async Task<IActionResult> ConfirmTransaction([FromBody] ConfirmPaymentRequest request)
     {
-        _logger.LogInformation("✅ Confirmando transacción: UniqueId={UniqueId}", request.UniqueId);
+        _logger.LogInformation("✅ Confirmando transacción: IdTransactionPasarela={IdTransactionPasarela}",
+            request.IdTransactionPasarela);
 
-        var sql = @"
-            UPDATE SimulatedTransactions
-            SET Status = 'APPROVED'
-            WHERE UniqueId = @UniqueId
+        // Buscar la transacción por IdTransactionPasarela o IdOrder
+        var findSql = @"
+            SELECT IdTransactionInterbank FROM SimulatedTransactions
+            WHERE IdTransactionPasarela = @IdTransactionPasarela OR IdOrder = @IdOrder
+            LIMIT 1
         ";
 
-        var rowsAffected = await _dbConnection.ExecuteAsync(sql, new { request.UniqueId });
+        var idTransactionInterbank = await _dbConnection.QueryFirstOrDefaultAsync<string>(
+            findSql, new { request.IdTransactionPasarela, request.IdOrder });
 
-        if (rowsAffected == 0)
+        if (string.IsNullOrEmpty(idTransactionInterbank))
         {
-            _logger.LogWarning("⚠️ Transacción no encontrada: {UniqueId}", request.UniqueId);
-            return NotFound(new { Message = "Transacción no encontrada" });
+            _logger.LogWarning("⚠️ Transacción no encontrada: {IdTransactionPasarela}", request.IdTransactionPasarela);
+            return NotFound(new {
+                code = "01",
+                message = "Transacción no encontrada"
+            });
         }
+
+        var updateSql = @"
+            UPDATE SimulatedTransactions
+            SET Status = 'APPROVED'
+            WHERE IdTransactionPasarela = @IdTransactionPasarela OR IdOrder = @IdOrder
+        ";
+
+        await _dbConnection.ExecuteAsync(updateSql, new { request.IdTransactionPasarela, request.IdOrder });
 
         var response = new TransactionActionResponse
         {
-            Status = "APPROVED",
-            Message = "Transacción aprobada exitosamente",
-            TransactionId = request.TransactionId,
-            UniqueId = request.UniqueId
+            Code = "00",
+            Message = "Transacción confirmada exitosamente",
+            Response = new TransactionActionResponseData
+            {
+                IdTransactionInterbank = idTransactionInterbank
+            }
         };
 
         return Ok(response);
@@ -106,30 +130,46 @@ public class PaymentController : ControllerBase
     /// Cancela una autorización de pago (simula rechazo del cliente)
     /// </summary>
     [HttpPost("cancelationPaymentAuthorization")]
-    public async Task<IActionResult> CancelTransaction([FromBody] TransactionActionRequest request)
+    public async Task<IActionResult> CancelTransaction([FromBody] CancelPaymentRequest request)
     {
-        _logger.LogInformation("❌ Cancelando transacción: UniqueId={UniqueId}", request.UniqueId);
+        _logger.LogInformation("❌ Cancelando transacción: IdTransactionPasarela={IdTransactionPasarela}",
+            request.IdTransactionPasarela);
 
-        var sql = @"
-            UPDATE SimulatedTransactions
-            SET Status = 'CANCELLED'
-            WHERE UniqueId = @UniqueId
+        // Buscar la transacción por IdTransactionPasarela o IdOrder
+        var findSql = @"
+            SELECT IdTransactionInterbank FROM SimulatedTransactions
+            WHERE IdTransactionPasarela = @IdTransactionPasarela OR IdOrder = @IdOrder
+            LIMIT 1
         ";
 
-        var rowsAffected = await _dbConnection.ExecuteAsync(sql, new { request.UniqueId });
+        var idTransactionInterbank = await _dbConnection.QueryFirstOrDefaultAsync<string>(
+            findSql, new { request.IdTransactionPasarela, request.IdOrder });
 
-        if (rowsAffected == 0)
+        if (string.IsNullOrEmpty(idTransactionInterbank))
         {
-            _logger.LogWarning("⚠️ Transacción no encontrada: {UniqueId}", request.UniqueId);
-            return NotFound(new { Message = "Transacción no encontrada" });
+            _logger.LogWarning("⚠️ Transacción no encontrada: {IdTransactionPasarela}", request.IdTransactionPasarela);
+            return NotFound(new {
+                code = "01",
+                message = "Transacción no encontrada"
+            });
         }
+
+        var updateSql = @"
+            UPDATE SimulatedTransactions
+            SET Status = 'CANCELLED'
+            WHERE IdTransactionPasarela = @IdTransactionPasarela OR IdOrder = @IdOrder
+        ";
+
+        await _dbConnection.ExecuteAsync(updateSql, new { request.IdTransactionPasarela, request.IdOrder });
 
         var response = new TransactionActionResponse
         {
-            Status = "CANCELLED",
+            Code = "00",
             Message = "Transacción cancelada exitosamente",
-            TransactionId = request.TransactionId,
-            UniqueId = request.UniqueId
+            Response = new TransactionActionResponseData
+            {
+                IdTransactionInterbank = idTransactionInterbank
+            }
         };
 
         return Ok(response);
