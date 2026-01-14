@@ -161,8 +161,8 @@ public class PaymentController : ControllerBase
             _logger.LogWarning("❌ Celular NO registrado en PLIN: {CellPhone}", cellPhone);
             return Ok(new ErrorResponseDto
             {
-                ErrorCode = "P01",
-                ErrorMessage = "El número de celular no está registrado en PLIN"
+                ErrorCode = "002",
+                ErrorMessage = "El cliente no existe"
             });
         }
 
