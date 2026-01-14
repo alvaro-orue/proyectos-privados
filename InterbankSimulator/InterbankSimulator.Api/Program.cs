@@ -1,4 +1,5 @@
 using InterbankSimulator.Api.Infrastructure;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
@@ -30,12 +31,21 @@ var app = builder.Build();
 
 // ===== CONFIGURACIÓN DEL PIPELINE HTTP =====
 
+// IMPORTANTE: Configuración para IIS y proxies inversos
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+
+// Configuración del PathBase para aplicaciones en rutas virtuales de IIS
+app.UsePathBase("/InterbankSimulator");
+
 // Swagger habilitado en todos los entornos (desarrollo y producción)
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Interbank Simulator v1");
-    options.RoutePrefix = string.Empty; // Swagger UI en la raíz (http://localhost:5000)
+    options.SwaggerEndpoint("/InterbankSimulator/swagger/v1/swagger.json", "Interbank Simulator v1");
+    options.RoutePrefix = string.Empty; // Swagger UI en la raíz relativa
 });
 
 app.UseHttpsRedirection();
@@ -43,7 +53,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 // ===== INICIO DE LA APLICACIÓN =====
-Console.WriteLine("✅ Simulador listo. Accede a Swagger en: http://localhost:5000");
+Console.WriteLine("✅ Simulador listo. Accede a Swagger en la ruta configurada");
 Console.WriteLine("📋 Endpoints disponibles:");
 Console.WriteLine("   - POST /pago-push/security/v1/oauth");
 Console.WriteLine("   - POST /pago-push/payment/v1/sendPaymentAuthorizationRequestNotification");
