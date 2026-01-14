@@ -166,41 +166,13 @@ public class PaymentController : ControllerBase
             });
         }
 
-        // ========== CREAR TRANSACCIÓN ==========
+        // ========== GENERAR RESPONSE ==========
 
         var idTransactionInterbank = $"IBK-TRX-{Guid.NewGuid():N}".Substring(0, 24).ToUpper();
-        var simulatedResult = GetSimulatedPaymentResult(cellPhone);
         var simulatedDevice = plinAffiliation.Device;  // Device viene de la BD
 
-        var transaction = new SimulatedTransaction
-        {
-            IdOrder = request.IdOrder,
-            IdTransactionPasarela = request.IdTransactionPasarela,
-            IdTransactionInterbank = idTransactionInterbank,
-            CommerceCode = request.Commerce.Code,
-            CommerceName = request.Commerce.Name,
-            CellPhoneNumber = normalizedPhone,
-            Amount = request.Pay.Amount,
-            Currency = request.Pay.Money,
-            DeviceIp = request.Device.Ip,
-            DeviceType = request.Device.Type,
-            Status = "PENDING",
-            CreatedAt = DateTime.UtcNow.ToString("o")
-        };
-
-        var sql = @"
-            INSERT INTO SimulatedTransactions
-            (IdOrder, IdTransactionPasarela, IdTransactionInterbank, CommerceCode, CommerceName,
-             CellPhoneNumber, Amount, Currency, DeviceIp, DeviceType, Status, CreatedAt)
-            VALUES
-            (@IdOrder, @IdTransactionPasarela, @IdTransactionInterbank, @CommerceCode, @CommerceName,
-             @CellPhoneNumber, @Amount, @Currency, @DeviceIp, @DeviceType, @Status, @CreatedAt)
-        ";
-
-        await _dbConnection.ExecuteAsync(sql, transaction);
-
-        _logger.LogInformation("✅ Transacción creada: {IdTransactionInterbank} | Dispositivo: {Device} | Resultado simulado: {Result}",
-            idTransactionInterbank, simulatedDevice, simulatedResult);
+        _logger.LogInformation("✅ Celular AFILIADO: {CellPhone} | Device: {Device}",
+            cellPhone, simulatedDevice);
 
         var response = new PaymentAuthorizationResponse
         {
