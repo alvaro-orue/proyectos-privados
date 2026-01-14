@@ -17,6 +17,7 @@ CREATE TABLE [Push].[SimulatedTransactions] (
 
     -- Cliente
     CellPhoneNumber NVARCHAR(20) NOT NULL,               -- Teléfono del cliente
+    Device NVARCHAR(50) NOT NULL,                     -- Dispositivo del cliente
     [State] tinyint NOT NULL,
     
     -- Metadata

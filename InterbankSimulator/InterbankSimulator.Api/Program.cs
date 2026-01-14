@@ -1,5 +1,5 @@
 using InterbankSimulator.Api.Infrastructure;
-using Microsoft.Data.Sqlite;
+using Microsoft.Data.SqlClient;
 using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,17 +13,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Inyección de dependencia: SQLite Connection con Dapper
+// Inyección de dependencia: SQL Server Connection con Dapper
 builder.Services.AddScoped<IDbConnection>(sp =>
 {
-    var connection = new SqliteConnection("Data Source=simulator.db");
+    var connectionString = builder.Configuration.GetConnectionString("SqlServerConnection");
+    var connection = new SqlConnection(connectionString);
     connection.Open();
     return connection;
 });
 
 // ===== INICIALIZACIÓN DE LA BASE DE DATOS =====
 Console.WriteLine("🚀 Iniciando Interbank Simulator...");
-DatabaseBootstrap.Initialize();
+// DatabaseBootstrap.Initialize();  // Ya no es necesario con SQL Server
 
 var app = builder.Build();
 

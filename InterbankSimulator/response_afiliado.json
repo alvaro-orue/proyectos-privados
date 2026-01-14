@@ -1,0 +1,14 @@
+{
+  "code": "00",
+  "message": "Notificación enviada exitosamente",
+  "response": {
+    "device": "SAMSUNG-SM-G998B",
+    "idTransactionInterbank": "IBK-TRX-9F434A3877DF4EF8"
+  },
+  "header": {
+    "transactionStartDatetime": "2026-01-13T12:51:57.022",
+    "transactionEndDatetime": "2026-01-13T12:51:57.037",
+    "millis": "15"
+  }
+}
+

@@ -42,23 +42,9 @@ public class PaymentController : ControllerBase
     };
 
     /// <summary>
-    /// Números NO registrados en PLIN
+    /// Record para resultado de consulta de afiliación PLIN
     /// </summary>
-    private static readonly HashSet<string> NotRegisteredPhoneNumbers = new()
-    {
-        "900000000",
-        "911111111"
-    };
-
-    /// <summary>
-    /// Dispositivos simulados por número de teléfono
-    /// </summary>
-    private static readonly Dictionary<string, string> SimulatedDevices = new()
-    {
-        { "931988302", "SAMSUNG-SM-G998B" },
-        { "984210587", "IPHONE-14-PRO-MAX" },
-        { "999999999", "XIAOMI-MI-11" }
-    };
+    private record PlinAffiliationResult(byte State, string Device);
 
     public PaymentController(IDbConnection dbConnection, ILogger<PaymentController> logger)
     {
@@ -85,16 +71,24 @@ public class PaymentController : ControllerBase
     }
 
     /// <summary>
-    /// Verifica si el número está registrado en PLIN
+    /// Consulta la afiliación PLIN desde SQL Server
     /// </summary>
-    private static bool IsPhoneRegisteredInPlin(string phone)
+    private async Task<PlinAffiliationResult?> GetPlinAffiliationAsync(string phone)
     {
         var normalized = NormalizePhoneNumber(phone);
 
-        if (NotRegisteredPhoneNumbers.Contains(normalized))
-            return false;
+        var sql = @"
+            SELECT [State], [Device]
+            FROM [Push].[SimulatedTransactions]
+            WHERE CellPhoneNumber = @CellPhoneNumber
+        ";
 
-        return true; // Por defecto, cualquier número está registrado
+        var result = await _dbConnection.QueryFirstOrDefaultAsync<PlinAffiliationResult>(
+            sql,
+            new { CellPhoneNumber = normalized }
+        );
+
+        return result;
     }
 
     /// <summary>
@@ -114,15 +108,6 @@ public class PaymentController : ControllerBase
             return "EXPIRED";
 
         return "APPROVED"; // Por defecto, aprobar
-    }
-
-    /// <summary>
-    /// Obtiene el dispositivo simulado del usuario PLIN
-    /// </summary>
-    private static string GetSimulatedDevice(string phone)
-    {
-        var normalized = NormalizePhoneNumber(phone);
-        return SimulatedDevices.TryGetValue(normalized, out var device) ? device : "GENERIC-ANDROID";
     }
 
     /// <summary>
@@ -167,8 +152,11 @@ public class PaymentController : ControllerBase
             });
         }
 
-        // Verificar si está registrado en PLIN
-        if (!IsPhoneRegisteredInPlin(cellPhone))
+        // Verificar si está registrado en PLIN (consulta a SQL Server)
+        var plinAffiliation = await GetPlinAffiliationAsync(cellPhone);
+
+        // Validar: no existe en BD o State != 1
+        if (plinAffiliation == null || plinAffiliation.State != 1)
         {
             _logger.LogWarning("❌ Celular NO registrado en PLIN: {CellPhone}", cellPhone);
             return Ok(new ErrorResponseDto
@@ -182,7 +170,7 @@ public class PaymentController : ControllerBase
 
         var idTransactionInterbank = $"IBK-TRX-{Guid.NewGuid():N}".Substring(0, 24).ToUpper();
         var simulatedResult = GetSimulatedPaymentResult(cellPhone);
-        var simulatedDevice = GetSimulatedDevice(cellPhone);
+        var simulatedDevice = plinAffiliation.Device;  // Device viene de la BD
 
         var transaction = new SimulatedTransaction
         {
